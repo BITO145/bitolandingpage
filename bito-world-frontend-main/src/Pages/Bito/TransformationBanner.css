@@ -1,0 +1,23 @@
+/* src/TransformationBanner.css */
+
+.banner-container {
+    background-color: #b28455; /* Background color similar to the image */
+    color: #ffffff; /* Text color */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+.banner-subtitle {  
+    max-width: 800px;
+    margin:0 auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+
+    
+    .banner-subtitle {
+        font-size: 1em;
+    }
+}

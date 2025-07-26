@@ -1,0 +1,59 @@
+.thank-you-container {
+    height: 100vh;
+
+}
+
+.check-icon {
+    font-size: 4rem;
+    color: #00d084;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.home-button {
+    margin-top: 30px;
+    padding: 10px 30px !important;
+    font-size: 1.1rem;
+    background-color: #422a1d !important;
+    border-color: #422a1d !important;
+    
+}
+
+.home-button:hover {
+    background-color: #007e66;
+    border-color: #007e66;
+}
+
+.thank-you{
+    margin-top: -10rem;
+    /* background: linear-gradient(135deg, #b27f4a, #422a1d); */
+    color: white;
+    /* background-image:url('../../assets/thank-you.jpg'); */
+
+background:linear-gradient(0deg, rgb(0 0 0 / 30%), rgb(0 0 0 / 40%)), url(/src/assets/thankyou.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+}
+.social-icons a {
+    font-size: 30px;
+    color: #422a1d;
+    margin: 0 10px;
+  }
+
+  .social-connect {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    color: #422a1d;
+    width:300px;
+    margin-top:30px
+  }

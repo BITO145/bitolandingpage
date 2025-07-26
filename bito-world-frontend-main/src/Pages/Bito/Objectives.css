@@ -1,0 +1,56 @@
+/* Base styles */
+.objectives {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    p strong{
+      color: #b2804a;
+    }
+  }
+  
+  .objectives-title {
+    font-size:20px;
+  
+    color: #422a1e; /* Adjust color as needed */
+
+  }
+  
+  .objectives-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* Objective styling */
+  .objective {
+    text-align: left;
+    padding: 15px;
+
+  }
+  
+  .objective h3 {
+    color: #a77248;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .objective p {
+    color: black;
+    margin: 5px 0;
+  }
+  
+  /* Larger screen layout */
+  @media (min-width: 768px) {
+    .objectives-container {
+      grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .objective h3 {
+      font-size: 1.1em;
+    }
+    
+  }
+  

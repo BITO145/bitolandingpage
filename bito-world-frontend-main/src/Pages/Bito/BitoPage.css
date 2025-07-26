@@ -1,0 +1,26 @@
+@media only screen and (min-width:900px) and (max-width:1400px) {
+    .image-r{position: relative;}
+    .image-p {
+        position: absolute;
+        left: -55px;
+        right:0px;
+    }
+
+}
+
+@media only screen and (min-width:1401px) and (max-width:3000px) {
+    .image-r{position: relative;}
+    .image-p {
+        position: absolute;
+        left: -104px;
+        right:0px;
+    }
+
+}
+
+.text-bito{
+    color:#ce9d68 !important;
+}
+.propelling li{
+    font-size: 15px;
+}

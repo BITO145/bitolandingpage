@@ -1,0 +1,284 @@
+/* Main Container */
+.membership-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #f0f0f0;
+}
+
+.membership-heading {
+    font-size: 2.5em;
+    color: #2a8fc0;
+    font-weight: bold;
+}
+
+.membership-subtitle {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Cards Wrapper */
+.membership-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Card Styling */
+.membership-card {
+    width: 360px;
+    padding-top:25px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Hover Effect */
+.membership-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.membership-card:hover .ribbon {
+    height: 20rem;
+    transition: transform 1s ease-in-out;
+    transform: rotate(270deg);
+    left: 140px;
+    transition: 0.5s;
+    top: -135px;
+}
+/* Vertical Ribbon */
+.ribbon {
+    position: absolute;
+    top: 0;
+    left:17px;
+    width: 35px;
+    height: 100%;
+    background-color: #b27f4a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    padding: 10px 0;
+    transform: translateX(-10px);
+    height: 25rem;
+    transition: 0.5s;
+}
+
+/* Pricing Details */
+.membership-pricing {
+    font-size:1.6em;
+    color: #333;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.8em;
+    margin-right: 10px;
+}
+
+.discount-price {
+    color: #422a1d;
+}
+
+.limited-time {
+    color: #b27f4a;
+    font-size: 0.9em;
+    margin-top: -5px;
+    margin-bottom: 20px;
+}
+
+/* Features List */
+.features-list {
+    margin: 15px 0;
+    font-size: 1em;
+    color: #666;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin: 8px 0px 8px 50px;
+    text-align: left;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.checkmark {
+    color: #00c853;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.dash {
+    color: #e53935;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+/* Subscribe Button */
+.subscribe-button {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    background-color: #b28455;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-button:hover {
+    background-color: #422a1d;
+}
+
+
+
+
+
+
+
+
+/* Modal overlay with subtle background blur */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Centered modal box with smooth shadow */
+.modal-content {
+
+    background: #fffbf5 !important; 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Transition effect for modal appearance */
+.modal-content {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+.modal-overlay.open .modal-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form styling with spacing and input customization */
+.subscription-form input {
+    width: 100%;
+    margin: 12px 0;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border 0.3s ease;
+}
+
+.subscription-form input:focus {
+    outline: none;
+    border: 1px solid #b28455; /* Matching brand color */
+    box-shadow: 0 0 5px rgba(178, 132, 85, 0.5);
+}
+
+/* Submit button with hover effect */
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #b28455;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #9a6b42;
+}
+
+/* Close button for modal */
+.close-button {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    padding: 2px 7px;
+    background-color: #b28455;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    width: 30px;
+    height: 30px;
+}
+
+.close-button:hover {
+    background-color: #ccc;
+}
+
+/* Heading styling for modal */
+.modal-content h3 {
+    color: #b28455;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Smooth appearance for modal container */
+.modal-overlay,
+.modal-content {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Responsive form adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 20px;
+        width: 90%;
+    }
+}
+
+@keyframes fadeInOverlay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
