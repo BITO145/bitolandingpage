@@ -6,7 +6,7 @@
 http://localhost:3000/api
 ```
 
-## Authentication
+## Authentication\
 - Register: `POST /api/auth/register`
 - Login: `POST /api/auth/login`
 - Admin Login: `POST /api/auth/admin/login`
