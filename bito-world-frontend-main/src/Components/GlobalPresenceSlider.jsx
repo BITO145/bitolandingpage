@@ -27,7 +27,7 @@ const chapterData = [
     image: "https://admin.mockup4clients.com/public/uploads/chapter/1751448680_mobile.jpg",
   },
   {
-    title: "LONDON",
+    title: "SYDNEY",
     image: "https://admin.mockup4clients.com/public/uploads/chapter/1751448574_desktop.jpeg",
   },
 ];
