@@ -92,7 +92,7 @@ const AboutFooter = () => {
     { label: "BSIC" },
     { label: "Events", url: "https://bitoworld.in/old-site/bitoashmita.php" },
     { label: "Media" },
-    { label: "Job", url: "https://bitoworld.in/old-site/career.php" },
+    { label: "Job", url: "https://www.bitojobs.com/" },
     { label: "Contact" },
     { label: "Membership", url: "/membership" },
   ];

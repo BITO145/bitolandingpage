@@ -70,7 +70,7 @@ const Header = ({ scrollToSection }) => {
           <Nav className="ms-auto d-none d-lg-flex">
             <Nav.Link href="/events" className="text-white">Events</Nav.Link>
             {/* <Nav.Link href="#media" className="text-white">Media</Nav.Link> */}
-            <Nav.Link href="https://bitoworld.in/old-site/career.php" className="text-white">BITO Jobs</Nav.Link>
+            <Nav.Link href="https://www.bitojobs.com/" className="text-white">BITO Jobs</Nav.Link>
 
             <Nav.Link  href="/contact-us" className="text-white">Contact</Nav.Link>
 
@@ -121,7 +121,7 @@ const Header = ({ scrollToSection }) => {
             {/* <Nav.Link href="#media" className="text-dark" onClick={handleClose}>
               Media
             </Nav.Link> */}
-            <Nav.Link href="https://bitoworld.in/old-site/career.php" className="text-dark" onClick={handleClose}>
+            <Nav.Link href="https://www.bitojobs.com/" className="text-dark" onClick={handleClose}>
               BITO Jobs
             </Nav.Link>
             <Nav.Link href="#contact" className="text-dark" onClick={handleClose}>
