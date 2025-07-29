@@ -7,27 +7,27 @@ import "swiper/css/pagination";
 
 const chapterData = [
   {
-    title: "SINGAPORE",
+    title: "TOKYO",
     image: "https://admin.mockup4clients.com/public/uploads/chapter/1751448586_desktop.jpeg",
   },
   {
-    title: "SYDNEY",
+    title: "NEW YORK",
     image: "https://admin.mockup4clients.com/public/uploads/chapter/1751448642_mobile.jpeg",
   },
   {
-    title: "TOKYO",
+    title: "SINGAPORE",
     image: "https://admin.mockup4clients.com/public/uploads/chapter/1751448469_desktop.jpg",
   },
   {
-    title: "NEW YORK",
+    title: "LONDON",
     image: "https://admin.mockup4clients.com/public/uploads/chapter/1751448662_desktop.jpg",
   },
   {
-    title: "LONDON",
+    title: "DUBAI",
     image: "https://admin.mockup4clients.com/public/uploads/chapter/1751448680_mobile.jpg",
   },
   {
-    title: "DUBAI",
+    title: "LONDON",
     image: "https://admin.mockup4clients.com/public/uploads/chapter/1751448574_desktop.jpeg",
   },
 ];
