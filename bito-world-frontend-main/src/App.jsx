@@ -100,6 +100,7 @@ import uae30 from './assets/events/UAE-event/30.webp'
 import OurWork from './Pages/OurWork'
 import BitoAdvisors from './Pages/BitoAdvisors'
 import ContactUs from './Pages/ContactUs'
+import Appointment from './Pages/Appointment'
 
 
 function slugify(text) {
@@ -161,6 +162,7 @@ const App = () => {
           <Route path="/our-work" element={<OurWork/>}/>
           <Route path='/contact-us' element={<ContactUs/>} />
           <Route path='/bito-advisors' element={<BitoAdvisors/>}/>
+          <Route path='/appointment' element={<Appointment />} />
           {/* Dynamic events page */}
           <Route path='/events' element={<Events events={events} />} />
           <Route path='/events/:slug' element={<EventDetails events={events} />} />
