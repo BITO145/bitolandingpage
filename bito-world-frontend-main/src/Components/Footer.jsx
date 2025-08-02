@@ -152,14 +152,14 @@ const Footer = () => {
                   <h4>Social Links</h4>
 
                   <div className="social-icons d-flex align-items-center">
-                    <Link to={'https://www.facebook.com/people/Bihar-International-Trade-Organisation/61553947718537/?mibextid=ZbWKwL'}>
+                    <Link to={'https://www.facebook.com/BiharInternationalTradeOrganisation/'}>
                       <Image
                         src={Facebook}
                         className="social-links-img"
                         alt="footer-social-logo"
                       />
                     </Link>
-                    <Link>
+                    <Link to={'https://www.instagram.com/bito_world_official/'}>
                       <Image
                         src={Instagram}
                         className="social-links-img"
@@ -173,7 +173,7 @@ const Footer = () => {
                         alt="footer-social-logo"
                       />
                     </Link>
-                    <Link>
+                    <Link to={'https://x.com/BITOWorldoff'}>
                       <Image
                         src={Twitter}
                         className="social-links-img"

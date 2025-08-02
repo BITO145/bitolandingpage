@@ -97,8 +97,14 @@ import uae27 from './assets/events/UAE-event/27.webp'
 import uae28 from './assets/events/UAE-event/28.webp'
 import uae29 from './assets/events/UAE-event/29.webp'
 import uae30 from './assets/events/UAE-event/30.webp'
-// Bihar Asmita Diwas 2025 Event Image
-import biharAsmitaDiwas2025 from './assets/events/bihar-asmita-diwas-25/1 (1).png'
+// Bihar Asmita Diwas 2025 Event Images
+import biharAsmitaDiwas2025_1 from './assets/events/bihar-asmita-diwas-25/1 (1).png'
+import biharAsmitaDiwas2025_2 from './assets/events/bihar-asmita-diwas-25/2.png'
+import biharAsmitaDiwas2025_3 from './assets/events/bihar-asmita-diwas-25/3.png'
+import biharAsmitaDiwas2025_4 from './assets/events/bihar-asmita-diwas-25/4.png'
+import biharAsmitaDiwas2025_5 from './assets/events/bihar-asmita-diwas-25/5.JPG'
+import biharAsmitaDiwas2025_6 from './assets/events/bihar-asmita-diwas-25/6.JPG'
+import biharAsmitaDiwas2025_7 from './assets/events/bihar-asmita-diwas-25/7.JPG'
 import OurWork from './Pages/OurWork'
 import BitoAdvisors from './Pages/BitoAdvisors'
 import ContactUs from './Pages/ContactUs'
@@ -123,8 +129,8 @@ const App = () => {
     {
       id: 6,
       title: "Bihar Asmita Diwas 2025",
-      thumbnail: biharAsmitaDiwas2025,
-      images: [biharAsmitaDiwas2025],
+      thumbnail: biharAsmitaDiwas2025_1,
+      images: [biharAsmitaDiwas2025_1, biharAsmitaDiwas2025_2, biharAsmitaDiwas2025_3, biharAsmitaDiwas2025_4, biharAsmitaDiwas2025_5, biharAsmitaDiwas2025_6, biharAsmitaDiwas2025_7],
       description: "Celebrating Bihar's pride and heritage in 2025 with cultural performances, traditional ceremonies, and community engagement activities.",
     },
     {
