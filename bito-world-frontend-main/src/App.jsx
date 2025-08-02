@@ -119,6 +119,13 @@ const App = () => {
 
   const events = [
     {
+      id: 6,
+      title: "Bihar Asmita Diwas 2025",
+      thumbnail: thumbTwo,
+      images: [Event4, Event5, Event6, Event7, Event8, Event9, Event10, Event11],
+      description: "Celebrating Bihar's pride and heritage in 2025 with cultural performances, traditional ceremonies, and community engagement activities.",
+    },
+    {
       id: 5,
       title: "BITO UAE CHAPTER",
       thumbnail: thumbFive,
