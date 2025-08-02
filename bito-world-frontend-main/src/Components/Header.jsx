@@ -49,7 +49,7 @@ const Header = ({ scrollToSection }) => {
             <Nav.Link as={Link} to="/about" className="text-white">About</Nav.Link>
             <Nav.Link as={Link} to="/our-work" className="text-white">Our Work</Nav.Link>
             <Nav.Link onClick={scrollToThirtyPercent} className="text-white">Leadership</Nav.Link>
-            <Nav.Link href="https://bitoworld.in/bsic/" className="text-white">BSIC</Nav.Link>
+            {/* <Nav.Link href="https://bitoworld.in/bsic/" className="text-white">BSIC</Nav.Link> */}
           </Nav>
 
           {/* Logo in the Middle */}
@@ -69,7 +69,7 @@ const Header = ({ scrollToSection }) => {
             <Nav.Link as={Link} to="/events" className="text-white">Events</Nav.Link>
             <Nav.Link as={Link} to="/appointment" className="text-white">Book Appointment</Nav.Link>
             {/* <Nav.Link href="#media" className="text-white">Media</Nav.Link> */}
-            <Nav.Link href="https://www.bitojobs.com/" className="text-white">BITO Jobs</Nav.Link>
+            <Nav.Link href="https://www.bitojobs.com/" target="_blank" rel="noopener noreferrer" className="text-white">BITO Jobs</Nav.Link>
 
             <Nav.Link as={Link} to="/contact-us" className="text-white">Contact</Nav.Link>
 
@@ -109,9 +109,7 @@ const Header = ({ scrollToSection }) => {
             <Nav.Link href="#leadership" className="text-dark" onClick={handleClose}>
               Leadership
             </Nav.Link>
-            <Nav.Link href="https://bitoworld.in/old-site/BSIC.php" className="text-dark" onClick={handleClose}>
-              BSIC
-            </Nav.Link>
+
             <Nav.Link href="/events" className="text-dark" onClick={handleClose}>
               Events
             </Nav.Link>

@@ -68,7 +68,7 @@ const Footer = () => {
 
                 {/* <li>About</li> */}
                 <a style={{ textDecoration: 'none', color: 'black' }} href="/our-work"><li>Our Work</li></a>
-                <a style={{ textDecoration: 'none', color: 'black' }} href="https://bitoworld.in/bsic/"><li >BSIC</li></a>
+                {/* <a style={{ textDecoration: 'none', color: 'black' }} href="https://bitoworld.in/bsic/"><li >BSIC</li></a> */}
                 {/* <li>Chapter</li>
                 <li>Bihar Voice</li> */}
 
