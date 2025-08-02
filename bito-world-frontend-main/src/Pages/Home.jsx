@@ -4,7 +4,7 @@ import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import Section3 from "../assets/chirag-paswan.png";
 import PravinKumar from "../assets/praveen.jpg";
 import MembershipImg from "../assets/membership.png";
-import Amresh from '../assets/amresh.jpg'
+import Amresh from '../assets/amresh.png'
 import Vision from "../assets/Layer-21.png";
 import Mission from "../assets/Layer-22.png";
 import Kamal from '../assets/kamal.png'
@@ -333,6 +333,34 @@ const Home = (props) => {
   {/* Slide 1 */}
   <SwiperSlide>
     <Col>
+      <div className="president-card premond">
+        <div className="upper-title">
+          <Image className="img-2-president" src={Amresh} alt="amresh-ji" />
+          <div className="name-div">
+            <h2 className="name-div-head">Amaresh Mishra</h2>
+            <p className="name-div-subhead">Secretary-General</p>
+            <p className="chairmain-inner">
+              Bihar International Trade Organization
+            </p>
+          </div>
+        </div>
+
+        <p className="chairmain-msg">
+          Dear All, <br /><br />
+          As Secretary General of BITO, I am proud to lead an organization...
+        </p>
+        <div>
+          <Button onClick={() => setModalShow3(true)} className="section-3-btn px-4 py-2">
+            Read More <i className="fa fa-arrow-right" aria-hidden="true"></i>
+          </Button>
+        </div>
+      </div>
+    </Col>
+  </SwiperSlide>
+
+  {/* Slide 2 */}
+  <SwiperSlide>
+    <Col>
       <div className="president-card-2 premond">
         <div className="upper-title">
           <Image className="img-2-president" src={PravinKumar} alt="pravin-kumar" />
@@ -352,34 +380,6 @@ const Home = (props) => {
         </p>
         <div>
           <Button onClick={() => setModalShow2(true)} className="section-3-btn px-4 py-2">
-            Read More <i className="fa fa-arrow-right" aria-hidden="true"></i>
-          </Button>
-        </div>
-      </div>
-    </Col>
-  </SwiperSlide>
-
-  {/* Slide 2 */}
-  <SwiperSlide>
-    <Col>
-      <div className="president-card premond">
-        <div className="upper-title">
-          <Image className="img-2-president" src={Amresh} alt="amresh-ji" />
-          <div className="name-div">
-            <h2 className="name-div-head">Amaresh Mishra</h2>
-            <p className="name-div-subhead">Secretary-General</p>
-            <p className="chairmain-inner">
-              Bihar International Trade Organization
-            </p>
-          </div>
-        </div>
-
-        <p className="chairmain-msg">
-          Dear All, <br /><br />
-          As Secretary General of BITO, I am proud to lead an organization...
-        </p>
-        <div>
-          <Button onClick={() => setModalShow3(true)} className="section-3-btn px-4 py-2">
             Read More <i className="fa fa-arrow-right" aria-hidden="true"></i>
           </Button>
         </div>
@@ -491,7 +491,29 @@ const Home = (props) => {
                 Dear All,
                 <br />
                 <br />
-                As Secretary General of BITO, I am proud to lead an organization that drives innovation and collaboration in our industry. Our commitment to advancing technology and fostering global partnerships has never been stronger. Together, we will continue to overcome challenges and create opportunities for sustainable growth and development.
+                As Secretary General of BITO, I am proud to lead an organization that
+                drives innovation and collaboration in our industry. Our commitment to
+                advancing technology and fostering global partnerships has never been
+                stronger. Together, we will continue to overcome challenges and create
+                opportunities for sustainable growth and development.
+                <br />
+                <br />
+                Under the visionary leadership of Shri Chirag Paswan, BITO has
+                established itself as a catalyst for change, promoting Bihar's rich
+                cultural heritage while fostering economic growth and international
+                partnerships. Our organization serves as a bridge between tradition
+                and progress, ensuring that Bihar's potential is recognized globally.
+                <br />
+                <br />
+                As we move forward, I am committed to strengthening our global
+                network of 21 countries, enhancing our startup incubator initiatives,
+                and promoting "Bihari Asmita" worldwide. Together, we will continue
+                to transform Bihar into a hub of innovation, culture, and economic
+                prosperity.
+                <br />
+                <br />
+                Best regards, <br />
+                Amaresh Mishra
               </p>
             </Modal.Body>
 
