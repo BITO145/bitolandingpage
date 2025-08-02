@@ -62,7 +62,7 @@ const OurWork = () => {
                                 className="bannerHeading"
                                 style={{ fontSize: "100px", fontWeight: 700 }}
                             >
-                                Events
+                                Work
                             </h2>
                         </div>
                     </div>
