@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API URL Test</title>
+</head>
+<body>
+    <h1>API URL Test</h1>
+    <div id="result"></div>
+    
+    <script type="module">
+        // Test environment variable
+        const apiUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
+        
+        document.getElementById('result').innerHTML = `
+            <h2>Environment Variable Test</h2>
+            <p><strong>VITE_API_BASE_URL:</strong> ${import.meta.env.VITE_API_BASE_URL || 'NOT SET'}</p>
+            <p><strong>Final API URL:</strong> ${apiUrl}</p>
+            <p><strong>Membership Submit URL:</strong> ${apiUrl}/membership/submit</p>
+            
+            <h3>Test API Call</h3>
+            <button onclick="testAPI()">Test API Call</button>
+            <div id="apiResult"></div>
+        `;
+        
+        window.testAPI = async function() {
+            try {
+                const response = await fetch(`${apiUrl}/membership/submit`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: 'Test User',
+                        email: 'test@example.com',
+                        phone: '1234567890',
+                        organization: 'Test Org',
+                        membershipType: 'individual',
+                        message: 'Test submission'
+                    })
+                });
+                
+                const result = await response.json();
+                document.getElementById('apiResult').innerHTML = `
+                    <p><strong>Status:</strong> ${response.status}</p>
+                    <p><strong>Response:</strong> ${JSON.stringify(result, null, 2)}</p>
+                `;
+            } catch (error) {
+                document.getElementById('apiResult').innerHTML = `
+                    <p><strong>Error:</strong> ${error.message}</p>
+                `;
+            }
+        };
+    </script>
+</body>
+</html> 

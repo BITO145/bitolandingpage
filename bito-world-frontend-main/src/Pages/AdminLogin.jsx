@@ -12,7 +12,7 @@ const AdminLogin = () => {
     setError('');
     
     try {
-      const apiUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
+      const apiUrl = import.meta.env.VITE_API_BASE_URL || 'https://bitolandingpage-iyhj.vercel.app/api';
       console.log('Attempting login to:', `${apiUrl}/auth/admin/login`);
       
       const res = await fetch(`${apiUrl}/auth/admin/login`, {
