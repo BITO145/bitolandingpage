@@ -73,6 +73,43 @@ const firstLeader = [
 const leaders = [
   {
     bitoAdvisor: false,
+    name: "Amaresh Mishra",
+    role: "Secretary-General",
+    image: Amresh,
+    shortMsg: 'As Secretary General of BITO, I am proud to lead an organization...',
+    modalMessage: (
+      <>
+        <p>Dear All,</p>
+        <p>
+          As Secretary General of BITO, I am proud to lead an organization that
+          drives innovation and collaboration in our industry. Our commitment to
+          advancing technology and fostering global partnerships has never been
+          stronger. Together, we will continue to overcome challenges and create
+          opportunities for sustainable growth and development.
+        </p>
+        <p>
+          Under the visionary leadership of Shri Chirag Paswan, BITO has
+          established itself as a catalyst for change, promoting Bihar's rich
+          cultural heritage while fostering economic growth and international
+          partnerships. Our organization serves as a bridge between tradition
+          and progress, ensuring that Bihar's potential is recognized globally.
+        </p>
+        <p>
+          As we move forward, I am committed to strengthening our global
+          network of 21 countries, enhancing our startup incubator initiatives,
+          and promoting "Bihari Asmita" worldwide. Together, we will continue
+          to transform Bihar into a hub of innovation, culture, and economic
+          prosperity.
+        </p>
+        <p>
+          Best regards, <br />
+          Amaresh Mishra
+        </p>
+      </>
+    ),
+  },
+  {
+    bitoAdvisor: false,
     name: "Pravin Kumar",
     role: "President",
     image: PravinKumar,
@@ -128,25 +165,6 @@ const leaders = [
         <p>
           Best regards, <br />
           Pravin Kumar
-        </p>
-      </>
-    ),
-  },
-  {
-    bitoAdvisor: false,
-    name: "Amaresh Mishra",
-    role: "Secretary-General",
-    image: Amresh,
-    shortMsg: 'As Secretary General of BITO, I am proud to lead an...',
-    modalMessage: (
-      <>
-        <p>Dear All,</p>
-        <p>
-          As Secretary General of BITO, I am proud to lead an organization that
-          drives innovation and collaboration in our industry. Our commitment to
-          advancing technology and fostering global partnerships has never been
-          stronger. Together, we will continue to overcome challenges and create
-          opportunities for sustainable growth and development.
         </p>
       </>
     ),
