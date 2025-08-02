@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Image, Tab, Tabs } from "react-bootstrap";
 import {
-  aboutUs,
+  about,
   biharAsmitaFoundation,
   curriculum,
   economics,
@@ -66,7 +66,7 @@ const About = () => {
           </div>
           <div className="col-12 col-md-1"></div>
           <div className="col-12 col-md-5">
-            <img src={aboutUs} alt="" width="100%" />
+            <img src={about} alt="" width="100%" />
           </div>
         </div>
       </section>
