@@ -11,9 +11,9 @@ const AdminLogin = () => {
     e.preventDefault();
     setError('');
     
-    try {
-      const apiUrl = import.meta.env.VITE_API_BASE_URL || 'https://bitolandingpage-iyhj.vercel.app/api';
-      console.log('Attempting login to:', `${apiUrl}/auth/admin/login`);
+          try {
+        const apiUrl = 'https://bitolandingpage-iyhj.vercel.app/api';
+        console.log('Attempting login to:', `${apiUrl}/auth/admin/login`);
       
       const res = await fetch(`${apiUrl}/auth/admin/login`, {
         method: 'POST',

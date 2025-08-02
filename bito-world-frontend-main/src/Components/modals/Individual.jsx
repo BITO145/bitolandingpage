@@ -29,7 +29,7 @@ const Individual = ({ formData, handleChange, finalSubmit, ...props }) => {
         setIsLoading(true);
         try {
             // Save to database
-            const apiUrl = import.meta.env.VITE_API_BASE_URL || 'https://bitolandingpage-iyhj.vercel.app/api';
+            const apiUrl = 'https://bitolandingpage-iyhj.vercel.app/api';
             const dbResponse = await fetch(`${apiUrl}/membership/submit`, {
                 method: 'POST',
                 headers: {

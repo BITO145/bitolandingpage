@@ -125,7 +125,7 @@ const Appointment = () => {
             };
 
             // Save to database first
-            const apiUrl = import.meta.env.VITE_API_BASE_URL || 'https://bitolandingpage-iyhj.vercel.app/api';
+            const apiUrl = 'https://bitolandingpage-iyhj.vercel.app/api';
             const dbResponse = await fetch(`${apiUrl}/appointment/submit`, {
                 method: 'POST',
                 headers: {
