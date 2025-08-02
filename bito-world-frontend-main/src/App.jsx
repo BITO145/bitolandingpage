@@ -97,6 +97,8 @@ import uae27 from './assets/events/UAE-event/27.webp'
 import uae28 from './assets/events/UAE-event/28.webp'
 import uae29 from './assets/events/UAE-event/29.webp'
 import uae30 from './assets/events/UAE-event/30.webp'
+// Bihar Asmita Diwas 2025 Event Image
+import biharAsmitaDiwas2025 from './assets/events/bihar-asmita-diwas-25/1 (1).png'
 import OurWork from './Pages/OurWork'
 import BitoAdvisors from './Pages/BitoAdvisors'
 import ContactUs from './Pages/ContactUs'
@@ -121,8 +123,8 @@ const App = () => {
     {
       id: 6,
       title: "Bihar Asmita Diwas 2025",
-      thumbnail: thumbTwo,
-      images: [Event4, Event5, Event6, Event7, Event8, Event9, Event10, Event11],
+      thumbnail: biharAsmitaDiwas2025,
+      images: [biharAsmitaDiwas2025],
       description: "Celebrating Bihar's pride and heritage in 2025 with cultural performances, traditional ceremonies, and community engagement activities.",
     },
     {
