@@ -9,7 +9,7 @@ import AdminCMS from '../Pages/AdminCMS';
 
 const RequireAdminAuth = ({ children }) => {
   const token = localStorage.getItem('adminToken');
-  return token ? children : <Navigate to="/admin/login" />;
+  return token ? children : <Navigate to="/admin-login" />;
 };
 
 const AllRoutes = () => (
@@ -17,9 +17,9 @@ const AllRoutes = () => (
     <Route path="/" element={<Home />} />
     <Route path="/about" element={<About />} />
     {/* Admin routes */}
-    <Route path="/admin/login" element={<AdminLogin />} />
-    <Route path="/admin/dashboard" element={<RequireAdminAuth><AdminDashboard /></RequireAdminAuth>} />
-    <Route path="/admin/cms" element={<RequireAdminAuth><AdminCMS /></RequireAdminAuth>} />
+    <Route path="/admin-login" element={<AdminLogin />} />
+    <Route path="/admin-dashboard" element={<RequireAdminAuth><AdminDashboard /></RequireAdminAuth>} />
+    <Route path="/admin-cms" element={<RequireAdminAuth><AdminCMS /></RequireAdminAuth>} />
     {/* Add more routes as needed */}
   </Routes>
 );

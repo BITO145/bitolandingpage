@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import Header from './Components/Header'
 import Home from './Pages/Home'
 import Footer from './Components/Footer'
@@ -101,11 +101,19 @@ import OurWork from './Pages/OurWork'
 import BitoAdvisors from './Pages/BitoAdvisors'
 import ContactUs from './Pages/ContactUs'
 import Appointment from './Pages/Appointment'
+import AdminLogin from './Pages/AdminLogin'
+import AdminDashboard from './Pages/AdminDashboard'
+import AdminCMS from './Pages/AdminCMS'
 
 
 function slugify(text) {
   return text.toLowerCase().replace(/ /g, "-").replace(/[^\w-]+/g, "");
 }
+
+const RequireAdminAuth = ({ children }) => {
+  const token = localStorage.getItem('adminToken');
+  return token ? children : <Navigate to="/admin-login" />;
+};
 
 const App = () => {
 
@@ -154,7 +162,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/bia" element={<BIA />} />
-          <Route path="/membership" exact element={<Membership />} />
+          <Route path="/membership" element={<Membership />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/bito" element={<BitoPage />} />
           <Route path="/membership-plans" element={<MembershipPlans />} />
@@ -163,10 +171,14 @@ const App = () => {
           <Route path='/contact-us' element={<ContactUs/>} />
           <Route path='/bito-advisors' element={<BitoAdvisors/>}/>
           <Route path='/appointment' element={<Appointment />} />
+          {/* Admin routes */}
+          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/admin-dashboard" element={<RequireAdminAuth><AdminDashboard /></RequireAdminAuth>} />
+          <Route path="/admin-cms" element={<RequireAdminAuth><AdminCMS /></RequireAdminAuth>} />
           {/* Dynamic events page */}
           <Route path='/events' element={<Events events={events} />} />
           <Route path='/events/:slug' element={<EventDetails events={events} />} />
-          <Route component={<NotFound />} /> {/* Catch-all for 404 */}
+          <Route path="*" element={<NotFound />} /> {/* Catch-all for 404 */}
         </Routes>
 
         <Routes>

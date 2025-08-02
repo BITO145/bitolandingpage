@@ -6,14 +6,7 @@ import FacebookLogo from '../assets/facebook-logo.png'
 import YoutubeLogo from '../assets/youtube.png'
 import TwitterLogo from '../assets/twitter.png'
 import LinkedinLogo from '../assets/linkedin.png'
-import emailjs from "emailjs-com";
 import { useNavigate } from 'react-router-dom'
-
-
-
-const serviceId = "service_28p4dun";
-const templateId = "template_m8arbl4";
-const publicKey = "VMyL5IlII48LPmCIy";
 
 
 const ContactUs = () => {
@@ -37,7 +30,7 @@ const ContactUs = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault(); // Prevent page reload
         setIsLoading(true);
 
@@ -48,37 +41,37 @@ const ContactUs = () => {
             return;
         }
 
-        // Send data via EmailJS
-        emailjs
-            .send(
-                serviceId,
-                templateId,
-                {
+        try {
+            // Save to database
+            const apiUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
+            const dbResponse = await fetch(`${apiUrl}/contact/submit`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
                     name: formData.name,
                     email: formData.email,
-                    phone: formData.phone,
-                    subject: formData.subject,
-                    message: formData.message,
-                },
-                publicKey
-            )
-            .then(
-                (response) => {
-                    console.log("Email sent successfully!", response);
-                    setIsLoading(false); // Stop loading after success
-                    setFormData({ name: "", email: "", phone: "", subject: "", message: "" }); // Reset form
-                    navigate("/thank-you"); // Redirect to Thank You page
-                },
-                () => {
-                    setIsLoading(false); // Stop loading after failure
-                    alert("Failed to send message. Please try again.");
-                },
-                (error) => {
-                    console.error("Error sending email:", error);
-                    alert("Failed to send message. Please try again.");
-                }
-            );
+                    message: `${formData.subject ? 'Subject: ' + formData.subject + '\n' : ''}${formData.phone ? 'Phone: ' + formData.phone + '\n' : ''}${formData.message}`
+                })
+            });
 
+            if (dbResponse.ok) {
+                console.log("Message saved successfully!");
+                setIsLoading(false);
+                setFormData({ name: "", email: "", phone: "", subject: "", message: "" }); // Reset form
+                navigate("/thank-you"); // Redirect to Thank You page
+            } else {
+                console.error('Failed to save to database');
+                setIsLoading(false);
+                alert("Failed to send message. Please try again.");
+            }
+
+        } catch (error) {
+            console.error("Error saving to database:", error);
+            setIsLoading(false);
+            alert("Failed to send message. Please try again.");
+        }
     };
     return (
         <>

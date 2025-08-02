@@ -124,6 +124,32 @@ const Appointment = () => {
                 })
             };
 
+            // Save to database first
+            const apiUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
+            const dbResponse = await fetch(`${apiUrl}/appointment/submit`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    selectedLeader: formData.selectedLeader,
+                    leaderName: leaders.find(l => l.id.toString() === formData.selectedLeader)?.name || '',
+                    leaderRole: leaders.find(l => l.id.toString() === formData.selectedLeader)?.role || '',
+                    date: formData.date,
+                    time: formData.time,
+                    purpose: formData.purpose,
+                    customPurpose: formData.customPurpose,
+                    message: formData.message
+                })
+            });
+
+            if (!dbResponse.ok) {
+                console.error('Failed to save to database');
+            }
+
             // Google Apps Script URL
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxM68oriZ-R_egzhbrBRH6BnBw7z1Xy0lQbibhPj3h1a1xDkanSxvFdb-74fiILMsfN2w/exec';
             

@@ -10,48 +10,125 @@ const AdminLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/auth/admin/login`, {
+      const apiUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
+      console.log('Attempting login to:', `${apiUrl}/auth/admin/login`);
+      
+      const res = await fetch(`${apiUrl}/auth/admin/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
       });
+      
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({ message: 'Network error' }));
+        throw new Error(errorData.message || `HTTP ${res.status}: Login failed`);
+      }
+      
       const data = await res.json();
-      if (!res.ok) throw new Error(data.message || 'Login failed');
+      console.log('Login successful:', data);
+      
       localStorage.setItem('adminToken', data.token);
-      navigate('/admin/dashboard');
+      navigate('/admin-dashboard');
     } catch (err) {
-      setError(err.message);
+      console.error('Login error:', err);
+      setError(err.message || 'Login failed. Please try again.');
     }
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: '60px auto', padding: 24, border: '1px solid #ccc', borderRadius: 8 }}>
-      <h2>Admin Login</h2>
+    <div style={{ 
+      maxWidth: 400, 
+      margin: '60px auto', 
+      padding: 30, 
+      border: '1px solid #e0e0e0', 
+      borderRadius: 10,
+      boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+      backgroundColor: 'white'
+    }}>
+      <h2 style={{ textAlign: 'center', marginBottom: 30, color: '#333' }}>🔐 Admin Login</h2>
       <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: 12 }}>
+        <div style={{ marginBottom: 20 }}>
+          <label style={{ display: 'block', marginBottom: 5, fontWeight: 'bold', color: '#555' }}>
+            Email
+          </label>
           <input
             type="email"
-            placeholder="Email"
+            placeholder="admin@bitoworld.com"
             value={email}
             onChange={e => setEmail(e.target.value)}
             required
-            style={{ width: '100%', padding: 8 }}
+            style={{ 
+              width: '100%', 
+              padding: 12, 
+              border: '1px solid #ddd',
+              borderRadius: 5,
+              fontSize: 16
+            }}
           />
         </div>
-        <div style={{ marginBottom: 12 }}>
+        <div style={{ marginBottom: 20 }}>
+          <label style={{ display: 'block', marginBottom: 5, fontWeight: 'bold', color: '#555' }}>
+            Password
+          </label>
           <input
             type="password"
-            placeholder="Password"
+            placeholder="••••••••"
             value={password}
             onChange={e => setPassword(e.target.value)}
             required
-            style={{ width: '100%', padding: 8 }}
+            style={{ 
+              width: '100%', 
+              padding: 12, 
+              border: '1px solid #ddd',
+              borderRadius: 5,
+              fontSize: 16
+            }}
           />
         </div>
-        {error && <div style={{ color: 'red', marginBottom: 12 }}>{error}</div>}
-        <button type="submit" style={{ width: '100%', padding: 10 }}>Login</button>
+        {error && (
+          <div style={{ 
+            color: '#dc3545', 
+            marginBottom: 20, 
+            padding: 10,
+            backgroundColor: '#f8d7da',
+            border: '1px solid #f5c6cb',
+            borderRadius: 5
+          }}>
+            ❌ {error}
+          </div>
+        )}
+        <button 
+          type="submit" 
+          style={{ 
+            width: '100%', 
+            padding: 12, 
+            backgroundColor: '#007bff',
+            color: 'white',
+            border: 'none',
+            borderRadius: 5,
+            fontSize: 16,
+            fontWeight: 'bold',
+            cursor: 'pointer'
+          }}
+        >
+          Login
+        </button>
       </form>
+      
+      <div style={{ 
+        marginTop: 20, 
+        padding: 15, 
+        backgroundColor: '#e7f3ff', 
+        borderRadius: 5,
+        fontSize: 14,
+        color: '#0c5460'
+      }}>
+        <strong>Test Credentials:</strong><br/>
+        Email: admin@bitoworld.com<br/>
+        Password: admin123
+      </div>
     </div>
   );
 };

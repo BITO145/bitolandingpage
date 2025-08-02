@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Connection Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .success { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+        .info {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .button {
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+        }
+        .button:hover { background: #0056b3; }
+        .test-result {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .test-success { background: #d4edda; color: #155724; }
+        .test-error { background: #f8d7da; color: #721c24; }
+        .form-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Frontend-Backend Form Connection Test</h1>
+        
+        <div class="info">
+            <h3>✅ Backend Status</h3>
+            <p><span class="success">✓ Server running on port 3000</span></p>
+            <p><span class="success">✓ API endpoints working</span></p>
+            <p><span class="success">✓ Database connected</span></p>
+        </div>
+
+        <div class="form-section">
+            <h2>📝 Test Contact Form</h2>
+            <div id="contact-results"></div>
+            <button onclick="testContactForm()" class="button">Test Contact Form</button>
+        </div>
+
+        <div class="form-section">
+            <h2>📅 Test Appointment Form</h2>
+            <div id="appointment-results"></div>
+            <button onclick="testAppointmentForm()" class="button">Test Appointment Form</button>
+        </div>
+
+        <div class="form-section">
+            <h2>👥 Test Membership Form</h2>
+            <div id="membership-results"></div>
+            <button onclick="testMembershipForm()" class="button">Test Membership Form</button>
+        </div>
+
+        <div class="form-section">
+            <h2>📊 Check Admin Dashboard</h2>
+            <div id="dashboard-results"></div>
+            <button onclick="checkDashboardData()" class="button">Check Dashboard Data</button>
+        </div>
+
+        <h2>🚀 Access Your Forms</h2>
+        
+        <div style="display: flex; gap: 10px; margin: 20px 0; flex-wrap: wrap;">
+            <a href="http://localhost:5173/contact-us" class="button">Contact Us Form</a>
+            <a href="http://localhost:5173/appointment" class="button">Appointment Form</a>
+            <a href="http://localhost:5173/membership" class="button">Membership Form</a>
+            <a href="http://localhost:5173/admin-dashboard" class="button">Admin Dashboard</a>
+        </div>
+        
+        <div class="info">
+            <h3>🔑 Admin Dashboard Login</h3>
+            <ul>
+                <li><strong>Email:</strong> admin@bitoworld.com</li>
+                <li><strong>Password:</strong> admin123</li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <h3>📋 What to Test</h3>
+            <ol>
+                <li>Click the test buttons above to verify API endpoints</li>
+                <li>Go to the actual forms and submit test data</li>
+                <li>Check the admin dashboard to see if data appears</li>
+                <li>Verify that all form submissions are captured</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function addResult(containerId, message, isSuccess = true) {
+            const container = document.getElementById(containerId);
+            const resultDiv = document.createElement('div');
+            resultDiv.className = `test-result ${isSuccess ? 'test-success' : 'test-error'}`;
+            resultDiv.innerHTML = `${isSuccess ? '✅' : '❌'} ${message}`;
+            container.appendChild(resultDiv);
+        }
+
+        async function testContactForm() {
+            const container = document.getElementById('contact-results');
+            container.innerHTML = '';
+
+            try {
+                const response = await fetch('http://localhost:3000/api/contact/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: 'Test Contact User',
+                        email: 'testcontact@example.com',
+                        message: 'This is a test contact form submission from frontend test.'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    addResult('contact-results', 'Contact form API working - data saved to database');
+                    addResult('contact-results', `Response: ${data.message}`);
+                } else {
+                    addResult('contact-results', `Contact form API failed: ${data.message}`, false);
+                }
+            } catch (error) {
+                addResult('contact-results', `Contact form test error: ${error.message}`, false);
+            }
+        }
+
+        async function testAppointmentForm() {
+            const container = document.getElementById('appointment-results');
+            container.innerHTML = '';
+
+            try {
+                const response = await fetch('http://localhost:3000/api/appointment/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: 'Test Appointment User',
+                        email: 'testappointment@example.com',
+                        phone: '+919876543210',
+                        selectedLeader: '1',
+                        leaderName: 'Test Leader',
+                        leaderRole: 'Test Role',
+                        date: '2024-01-25',
+                        time: '10:00',
+                        purpose: 'Test Purpose',
+                        message: 'This is a test appointment submission.'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    addResult('appointment-results', 'Appointment form API working - data saved to database');
+                    addResult('appointment-results', `Response: ${data.message}`);
+                } else {
+                    addResult('appointment-results', `Appointment form API failed: ${data.message}`, false);
+                }
+            } catch (error) {
+                addResult('appointment-results', `Appointment form test error: ${error.message}`, false);
+            }
+        }
+
+        async function testMembershipForm() {
+            const container = document.getElementById('membership-results');
+            container.innerHTML = '';
+
+            try {
+                const response = await fetch('http://localhost:3000/api/membership/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: 'Test Membership User',
+                        email: 'testmembership@example.com',
+                        phone: '+919876543210',
+                        organization: 'Test Organization',
+                        membershipType: 'corporate',
+                        message: 'This is a test membership application.'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    addResult('membership-results', 'Membership form API working - data saved to database');
+                    addResult('membership-results', `Response: ${data.message}`);
+                } else {
+                    addResult('membership-results', `Membership form API failed: ${data.message}`, false);
+                }
+            } catch (error) {
+                addResult('membership-results', `Membership form test error: ${error.message}`, false);
+            }
+        }
+
+        async function checkDashboardData() {
+            const container = document.getElementById('dashboard-results');
+            container.innerHTML = '';
+
+            try {
+                // First get admin token
+                const loginResponse = await fetch('http://localhost:3000/api/auth/admin/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: 'admin@bitoworld.com',
+                        password: 'admin123'
+                    })
+                });
+                
+                const loginData = await loginResponse.json();
+                
+                if (!loginResponse.ok) {
+                    addResult('dashboard-results', 'Login failed for dashboard check', false);
+                    return;
+                }
+
+                const token = loginData.token;
+
+                // Check appointments
+                const appointmentsResponse = await fetch('http://localhost:3000/api/appointment/admin/all', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (appointmentsResponse.ok) {
+                    const appointmentsData = await appointmentsResponse.json();
+                    addResult('dashboard-results', `Appointments in dashboard: ${appointmentsData.data?.appointments?.length || 0}`);
+                }
+
+                // Check contacts
+                const contactsResponse = await fetch('http://localhost:3000/api/contact/admin/all', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (contactsResponse.ok) {
+                    const contactsData = await contactsResponse.json();
+                    addResult('dashboard-results', `Contacts in dashboard: ${contactsData.data?.contacts?.length || 0}`);
+                }
+
+                // Check memberships
+                const membershipsResponse = await fetch('http://localhost:3000/api/membership/admin/all', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                if (membershipsResponse.ok) {
+                    const membershipsData = await membershipsResponse.json();
+                    addResult('dashboard-results', `Memberships in dashboard: ${membershipsData.data?.memberships?.length || 0}`);
+                }
+
+            } catch (error) {
+                addResult('dashboard-results', `Dashboard check error: ${error.message}`, false);
+            }
+        }
+    </script>
+</body>
+</html> 

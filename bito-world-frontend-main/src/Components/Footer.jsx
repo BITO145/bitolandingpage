@@ -88,7 +88,7 @@ const Footer = () => {
 
                 <a style={{textDecoration:'none',color:'#442c20'}} href="/contact-us"><li>Contact</li></a>
 
-                <a style={{ textDecoration: 'none', color: 'black' }} href="/membership" exact>
+                <a style={{ textDecoration: 'none', color: 'black' }} href="/membership">
                   Membership
                 </a>
 

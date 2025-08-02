@@ -43,13 +43,11 @@ const Header = ({ scrollToSection }) => {
               <GiHamburgerMenu size={30} />
             </Nav.Link>
 
-            <Link to="/" style={{ textDecoration: 'none' }}>
-              <Nav.Link href="/" className="text-white">
-                Home
-              </Nav.Link>
-            </Link>
-            <Nav.Link href="/about" className="text-white">About</Nav.Link>
-            <Nav.Link href="/our-work" className="text-white">Our Work</Nav.Link>
+            <Nav.Link as={Link} to="/" className="text-white">
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about" className="text-white">About</Nav.Link>
+            <Nav.Link as={Link} to="/our-work" className="text-white">Our Work</Nav.Link>
             <Nav.Link onClick={scrollToThirtyPercent} className="text-white">Leadership</Nav.Link>
             <Nav.Link href="https://bitoworld.in/bsic/" className="text-white">BSIC</Nav.Link>
           </Nav>
@@ -68,18 +66,16 @@ const Header = ({ scrollToSection }) => {
 
           {/* Right Nav Links (Desktop Only) */}
           <Nav className="ms-auto d-none d-lg-flex">
-            <Nav.Link href="/events" className="text-white">Events</Nav.Link>
-            <Nav.Link href="/appointment" className="text-white">Book Appointment</Nav.Link>
+            <Nav.Link as={Link} to="/events" className="text-white">Events</Nav.Link>
+            <Nav.Link as={Link} to="/appointment" className="text-white">Book Appointment</Nav.Link>
             {/* <Nav.Link href="#media" className="text-white">Media</Nav.Link> */}
             <Nav.Link href="https://www.bitojobs.com/" className="text-white">BITO Jobs</Nav.Link>
 
-            <Nav.Link  href="/contact-us" className="text-white">Contact</Nav.Link>
+            <Nav.Link as={Link} to="/contact-us" className="text-white">Contact</Nav.Link>
 
-            <Link to="/membership" style={{ textDecoration: 'none' }}>
-              <Nav.Link href="/membership" className="text-white">
-                Membership
-              </Nav.Link>
-            </Link>
+            <Nav.Link as={Link} to="/membership" className="text-white">
+              Membership
+            </Nav.Link>
           </Nav>
         </Container>
 

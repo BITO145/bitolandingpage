@@ -50,6 +50,8 @@ const actionpointsRoutes = require('./routes/actionpoints');
 const testimonialRoutes = require('./routes/testimonial');
 const uploadRoutes = require('./routes/upload');
 const contactRoutes = require('./routes/contact');
+const appointmentRoutes = require('./routes/appointment');
+const membershipRoutes = require('./routes/membership');
 app.use('/api', apiRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/banner', bannerRoutes);
@@ -67,6 +69,8 @@ app.use('/api/actionpoints', actionpointsRoutes);
 app.use('/api/testimonial', testimonialRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use('/api/contact', contactRoutes);
+app.use('/api/appointment', appointmentRoutes);
+app.use('/api/membership', membershipRoutes);
 
 // Health check
 app.get('/', (req, res) => {

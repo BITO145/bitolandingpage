@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .success { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+        .info {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .button {
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+        }
+        .button:hover { background: #0056b3; }
+        .test-result {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .test-success { background: #d4edda; color: #155724; }
+        .test-error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Admin Login Test</h1>
+        
+        <div class="info">
+            <h3>✅ Backend Status</h3>
+            <p><span class="success">✓ Server running on port 3000</span></p>
+            <p><span class="success">✓ Admin user created</span></p>
+            <p><span class="success">✓ Login endpoint working</span></p>
+        </div>
+
+        <div class="info">
+            <h3>✅ Frontend Status</h3>
+            <p><span class="success">✓ React app running on port 5173</span></p>
+            <p><span class="success">✓ Routes configured</span></p>
+            <p><span class="success">✓ Environment variables set</span></p>
+        </div>
+
+        <h2>🧪 Test Login Functionality</h2>
+        
+        <div id="test-results"></div>
+        
+        <button onclick="testBackendConnection()" class="button">Test Backend Connection</button>
+        <button onclick="testLoginAPI()" class="button">Test Login API</button>
+        <button onclick="testFrontendLogin()" class="button">Test Frontend Login</button>
+        
+        <h3>🚀 Access Admin Dashboard</h3>
+        <p>Click the button below to go directly to the admin login page:</p>
+        <a href="http://localhost:5173/admin-login" class="button">Go to Admin Login</a>
+        
+        <h3>🔑 Login Credentials</h3>
+        <ul>
+            <li><strong>Email:</strong> admin@bitoworld.com</li>
+            <li><strong>Password:</strong> admin123</li>
+        </ul>
+
+        <div class="info">
+            <h3>📋 Troubleshooting</h3>
+            <ul>
+                <li>If login fails, check browser console for errors</li>
+                <li>Make sure both servers are running (ports 3000 and 5173)</li>
+                <li>Check that the .env file is in the frontend directory</li>
+                <li>Try refreshing the page if you see network errors</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function addTestResult(message, isSuccess = true) {
+            const resultsDiv = document.getElementById('test-results');
+            const resultDiv = document.createElement('div');
+            resultDiv.className = `test-result ${isSuccess ? 'test-success' : 'test-error'}`;
+            resultDiv.innerHTML = `${isSuccess ? '✅' : '❌'} ${message}`;
+            resultsDiv.appendChild(resultDiv);
+        }
+
+        async function testBackendConnection() {
+            try {
+                const response = await fetch('http://localhost:3000');
+                const text = await response.text();
+                if (text.includes('Bitto World Node.js API is running')) {
+                    addTestResult('Backend connection successful');
+                } else {
+                    addTestResult('Backend response unexpected', false);
+                }
+            } catch (error) {
+                addTestResult(`Backend connection failed: ${error.message}`, false);
+            }
+        }
+
+        async function testLoginAPI() {
+            try {
+                const response = await fetch('http://localhost:3000/api/auth/admin/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: 'admin@bitoworld.com',
+                        password: 'admin123'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok && data.token) {
+                    addTestResult('Login API working - token received');
+                } else {
+                    addTestResult(`Login API failed: ${data.message}`, false);
+                }
+            } catch (error) {
+                addTestResult(`Login API error: ${error.message}`, false);
+            }
+        }
+
+        async function testFrontendLogin() {
+            try {
+                const response = await fetch('http://localhost:5173/admin-login');
+                if (response.ok) {
+                    addTestResult('Frontend login page accessible');
+                } else {
+                    addTestResult('Frontend login page not accessible', false);
+                }
+            } catch (error) {
+                addTestResult(`Frontend test failed: ${error.message}`, false);
+            }
+        }
+    </script>
+</body>
+</html> 

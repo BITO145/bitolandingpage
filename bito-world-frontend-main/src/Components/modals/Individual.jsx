@@ -2,13 +2,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { Button, Form, Modal } from "react-bootstrap";
-import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
 import { Country, State } from "country-state-city"; // Import the library
-
-const serviceId = "service_wrk5j76";
-const templateId = "template_ajfrv6q";
-const publicKey = "3CoQnyOSI3gq1XqZ6";
 
 const Individual = ({ formData, handleChange, finalSubmit, ...props }) => {
     const [activeTab, setActiveTab] = useState("individual");
@@ -30,21 +25,35 @@ const Individual = ({ formData, handleChange, finalSubmit, ...props }) => {
         handleChange(e); // Update formData with selected country
     };
 
-    const sendEmail = async () => {
-        try {
-            await emailjs.send(serviceId, templateId, formData, publicKey);
-            toast.success("Email sent successfully");
-        } catch (error) {
-            toast.error("Error sending email: " + error.message);
-        }
-    };
-
     const handleSubmit = async () => {
         setIsLoading(true);
         try {
-            await sendEmail();
-            window.location.href = "/thank-you";
+            // Save to database
+            const apiUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
+            const dbResponse = await fetch(`${apiUrl}/membership/submit`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    organization: formData.compnayName || 'Individual',
+                    membershipType: activeTab === 'individual' ? 'individual' : 'corporate',
+                    message: `Country: ${formData.country}, State: ${formData.state}, City: ${formData.cityPincode}, Gender: ${formData.gender}, Qualification: ${formData.qualification}, Industry: ${formData.industry}`
+                })
+            });
+
+            if (dbResponse.ok) {
+                console.log("Membership application saved successfully!");
+                window.location.href = "/thank-you";
+            } else {
+                console.error('Failed to save to database');
+                toast.error("Submission failed. Please try again.");
+            }
         } catch (error) {
+            console.error("Error saving to database:", error);
             toast.error("Submission failed. Please try again.");
         } finally {
             setIsLoading(false);
