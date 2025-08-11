@@ -23,25 +23,49 @@ const About = () => {
   return (
     <div>
       {/* Home Banner */}
-      <section className="about-img d-flex align-items-end">
-        <div className="container">
-          <div className="text-white">
-            <p className="fs-4 m-0 font-bnpr" style={{ marginTop: "330px" }}>
-              Welcome to
-            </p>
-            <strong className="fs-4 font-bnpr">
-              Bihar Internatinal Trade Organization
-            </strong>
-            <h2
-              key={1}
-              className="bannerHeading"
-              style={{ fontSize: "100px", fontWeight: 700 }}
-            >
-              About Us
-            </h2>
-          </div>
-        </div>
-      </section>
+      
+
+      <section
+  style={{
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    paddingTop: "235px",
+    paddingBottom: "50px",
+    marginTop: "-170px",
+    minHeight: "75vh",
+    position: "relative",
+  }}
+>
+  <img
+    src="https://t4.ftcdn.net/jpg/05/08/80/19/360_F_508801991_UTsCAOorx25USitqonfRADueJlzyjhDq.jpg"
+    alt="About Banner"
+    style={{
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      zIndex: -1,
+    }}
+  />
+
+  <div className="container text-white">
+    <p className="fs-4 m-0 font-bnpr">Welcome to</p>
+    <strong className="fs-4 font-bnpr">
+      Bihar International Trade Organization
+    </strong>
+    <h2
+      key={1}
+      className="bannerHeading"
+      style={{ fontSize: "100px", fontWeight: 700 }}
+    >
+      About Us
+    </h2>
+  </div>
+</section>
+
 
       <section className="container py-3 py-md-5">
         <div className="row pb-4 pb-md-1">
