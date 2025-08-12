@@ -57,7 +57,7 @@ const ObjectiveSection = () => {
           </div>
         </div>
 
-        <a href="https://bitoworld.in/old-site/about.php">
+        <a href="https://bitoworld.in/about">
           <button className="my-4 section-3-btn px-4 py-2 btn btn-primary">
             Read More <i className="fa fa-arrow-right" aria-hidden="true"></i>
           </button>

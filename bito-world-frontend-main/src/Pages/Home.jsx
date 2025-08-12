@@ -851,7 +851,7 @@ const Home = (props) => {
             </div>
 
           </div>
-          <a href="https://bitoworld.in/old-site/about.php">
+          <a href="https://bitoworld.in/about">
             <button className=" my-4 section-3-btn px-4 py-2 btn btn-primary">
               Read More <i className="fa fa-arrow-right" aria-hidden="true"></i>
             </button>
@@ -924,7 +924,7 @@ const Home = (props) => {
               </strong>
             </div>
           </div>
-          <a href="https://bitoworld.in/old-site/about.php">
+          <a href="https://bitoworld.in/about">
             <button className="section-3-btn px-4 py-2 btn btn-primary">
               Read More <i className="fa fa-arrow-right" aria-hidden="true"></i>
             </button>
@@ -989,7 +989,7 @@ const Home = (props) => {
             <strong>BITO Multi Specialty <br/> Hospital</strong>
           </div>
         </div>
-        <a href="https://bitoworld.in/old-site/about.php">
+        <a href="https://bitoworld.in/about">
           <button className="section-3-btn px-4 py-2 btn btn-primary">
             Read More <i className="fa fa-arrow-right" aria-hidden="true"></i>
           </button>
