@@ -65,31 +65,26 @@ exports.submitMembership = async (req, res) => {
   }
 };
 
-// Get all membership applications (admin only)
+// Get all membership applications (admin only, no limit)
 exports.getAllMemberships = async (req, res) => {
   try {
-    const { page = 1, limit = 10, status, membershipType } = req.query;
+    const { status, membershipType } = req.query;
     
     const filter = {};
     if (status) filter.status = status;
     if (membershipType) filter.membershipType = membershipType;
 
+    // Fetch all memberships without pagination
     const memberships = await Membership.find(filter)
       .sort({ createdAt: -1 })
-      .limit(limit * 1)
-      .skip((page - 1) * limit)
       .exec();
-
-    const count = await Membership.countDocuments(filter);
 
     res.json({
       status: true,
       message: 'Membership applications retrieved successfully',
       data: {
         memberships,
-        totalPages: Math.ceil(count / limit),
-        currentPage: parseInt(page),
-        totalCount: count
+        totalCount: memberships.length
       }
     });
 
@@ -198,4 +193,4 @@ exports.deleteMembership = async (req, res) => {
       data: null
     });
   }
-}; 
+};

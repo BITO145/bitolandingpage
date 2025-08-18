@@ -96,6 +96,8 @@ The admin dashboard provides a centralized place to view and manage all form sub
 
 ## Security
 - All admin endpoints require JWT authentication
+- All admin endpoints require JWT authentication
+
 - Admin routes are protected with middleware
 - CORS is configured for security
 - Rate limiting is implemented
