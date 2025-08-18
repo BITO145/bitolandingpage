@@ -66,31 +66,26 @@ const createAppointment = async (req, res) => {
   }
 };
 
-// Get all appointments (admin only)
+// Get all appointments (admin only, no limit)
 const getAllAppointments = async (req, res) => {
   try {
-    const { page = 1, limit = 10, status, leader } = req.query;
+    const { status, leader } = req.query;
     
     const filter = {};
     if (status) filter.status = status;
     if (leader) filter.selectedLeader = leader;
 
+    // Fetch all appointments without pagination
     const appointments = await Appointment.find(filter)
       .sort({ createdAt: -1 })
-      .limit(limit * 1)
-      .skip((page - 1) * limit)
       .exec();
-
-    const count = await Appointment.countDocuments(filter);
 
     res.json({
       status: true,
       message: 'Appointments retrieved successfully',
       data: {
         appointments,
-        totalPages: Math.ceil(count / limit),
-        currentPage: page,
-        totalCount: count
+        totalCount: appointments.length
       }
     });
 
@@ -166,7 +161,7 @@ const updateAppointmentStatus = async (req, res) => {
     console.error('Error updating appointment:', error);
     res.status(500).json({
       status: false,
-      message: 'Failed to update appointment',
+      message: 'Failed to update appointment status',
       data: null
     });
   }
@@ -256,5 +251,4 @@ module.exports = {
   updateAppointmentStatus,
   deleteAppointment,
   getAvailableTimeSlots
-}; 
- 
+};

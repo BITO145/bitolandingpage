@@ -26,7 +26,11 @@ exports.contact = async (req, res) => {
     // Try to send email notification (optional - won't break the request if it fails)
     try {
       const subject = `Contact Form Submission from ${name}`;
-      const html = `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong><br>${message}</p>`;
+      const html = `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong><br>${message}</p>
+      `;
       await sendEmail(process.env.MAIL_FROM_ADDRESS, subject, html);
     } catch (emailError) {
       console.log('Email notification failed (data still saved):', emailError.message);
@@ -51,29 +55,48 @@ exports.contact = async (req, res) => {
 // Get all contact submissions (admin only)
 exports.getAllContacts = async (req, res) => {
   try {
-    const { page = 1, limit = 10, status } = req.query;
+    const { page, limit, status } = req.query;
     
     const filter = {};
     if (status) filter.status = status;
 
-    const contacts = await Contact.find(filter)
-      .sort({ createdAt: -1 })
-      .limit(limit * 1)
-      .skip((page - 1) * limit)
-      .exec();
+    let contacts;
+    let count;
 
-    const count = await Contact.countDocuments(filter);
+    if (page && limit) {
+      // Paginated query
+      contacts = await Contact.find(filter)
+        .sort({ createdAt: -1 })
+        .limit(Number(limit))
+        .skip((Number(page) - 1) * Number(limit))
+        .exec();
 
-    res.json({
-      status: true,
-      message: 'Contact submissions retrieved successfully',
-      data: {
-        contacts,
-        totalPages: Math.ceil(count / limit),
-        currentPage: parseInt(page),
-        totalCount: count
-      }
-    });
+      count = await Contact.countDocuments(filter);
+
+      return res.json({
+        status: true,
+        message: 'Contact submissions retrieved successfully',
+        data: {
+          contacts,
+          totalPages: Math.ceil(count / limit),
+          currentPage: Number(page),
+          totalCount: count
+        }
+      });
+    } else {
+      // Return all contacts if no pagination
+      contacts = await Contact.find(filter).sort({ createdAt: -1 }).exec();
+      count = await Contact.countDocuments(filter);
+
+      return res.json({
+        status: true,
+        message: 'All contact submissions retrieved successfully',
+        data: {
+          contacts,
+          totalCount: count
+        }
+      });
+    }
 
   } catch (error) {
     console.error('Error getting contacts:', error);
@@ -180,4 +203,4 @@ exports.deleteContact = async (req, res) => {
       data: null
     });
   }
-}; 
+};
