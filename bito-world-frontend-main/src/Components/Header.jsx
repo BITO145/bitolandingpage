@@ -48,7 +48,7 @@ const Header = ({ scrollToSection }) => {
             </Nav.Link>
             <Nav.Link as={Link} to="/about" className="text-white">About</Nav.Link>
             <Nav.Link as={Link} to="/our-work" className="text-white">Our Work</Nav.Link>
-            <Nav.Link onClick={scrollToThirtyPercent} className="text-white">Leadership</Nav.Link>
+            {/* <Nav.Link onClick={scrollToThirtyPercent} className="text-white">Leadership</Nav.Link> */}
             {/* <Nav.Link href="https://bitoworld.in/bsic/" className="text-white">BSIC</Nav.Link> */}
           </Nav>
 
@@ -106,9 +106,9 @@ const Header = ({ scrollToSection }) => {
             <Nav.Link href="https://bitoworld.in/old-site/history.php" className="text-dark" onClick={handleClose}>
               Our Work
             </Nav.Link>
-            <Nav.Link href="#leadership" className="text-dark" onClick={handleClose}>
+            {/* <Nav.Link href="#leadership" className="text-dark" onClick={handleClose}>
               Leadership
-            </Nav.Link>
+            </Nav.Link> */}
 
             <Nav.Link href="/events" className="text-dark" onClick={handleClose}>
               Events

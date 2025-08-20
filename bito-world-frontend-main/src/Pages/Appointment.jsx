@@ -111,6 +111,24 @@ const Appointment = () => {
         setIsSubmitting(true);
         setError('');
 
+        // --- CUSTOM VALIDATION CHECK ---
+        const { name, email, phone, selectedLeader, date, time, purpose, customPurpose } = formData;
+        
+        // Check if required fields are empty
+        if (!name || !email || !phone || !selectedLeader || !date || !time || !purpose) {
+            setError('Please fill in all required fields.');
+            setIsSubmitting(false);
+            return; // Stop the submission
+        }
+
+        // Check for the custom purpose field if 'Other' is selected
+        if (purpose === 'other' && !customPurpose) {
+            setError('Please specify the purpose of your meeting.');
+            setIsSubmitting(false);
+            return; // Stop the submission
+        }
+        // --- END OF CUSTOM VALIDATION CHECK ---
+
         try {
             // Prepare data for Google Apps Script
             const appointmentData = {
@@ -228,6 +246,7 @@ const Appointment = () => {
                                     </p>
                                 </div>
 
+                                {/* Alert for validation errors */}
                                 {error && (
                                     <Alert variant="danger" className="mb-4">
                                         <i className="fas fa-exclamation-triangle me-2"></i>
@@ -516,4 +535,4 @@ const Appointment = () => {
     )
 }
 
-export default Appointment 
+export default Appointment
