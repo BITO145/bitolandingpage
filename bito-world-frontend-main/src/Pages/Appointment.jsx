@@ -40,16 +40,16 @@ const Appointment = () => {
         },
         {
             id: 2,
-            name: "Pravin Kumar",
-            role: "President",
-            image: PravinKumar,
+            name: "Amaresh Mishra",
+            role: "Secretary-General",
+            image: Amresh,
             available: true
         },
         {
             id: 3,
-            name: "Amaresh Mishra",
-            role: "Secretary-General",
-            image: Amresh,
+            name: "Pravin Kumar",
+            role: "President",
+            image: PravinKumar,
             available: true
         },
         {
