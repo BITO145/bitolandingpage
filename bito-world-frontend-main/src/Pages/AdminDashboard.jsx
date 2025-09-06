@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -9,7 +10,10 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('appointments');
   const [token, setToken] = useState(localStorage.getItem('adminToken'));
+  const [lotus,setlotus]= useState([])
   const navigate = useNavigate();
+  const BACKEND_URL = import.meta.env.VITE_MEMBERSHIP_BACKEND_URL;
+
 
   const API_BASE_URL = 'https://bitolandingpage-iyhj.vercel.app/api';
 
@@ -48,6 +52,12 @@ const AdminDashboard = () => {
           'Content-Type': 'application/json'
         }
       });
+      const lotusResponse = await fetch(`${BACKEND_URL}/api/forms`, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
 
       if (appointmentsResponse.ok) {
         const appointmentsData = await appointmentsResponse.json();
@@ -62,6 +72,10 @@ const AdminDashboard = () => {
       if (membershipsResponse.ok) {
         const membershipsData = await membershipsResponse.json();
         setMemberships(membershipsData.data?.memberships || []);
+      }
+      if(lotusResponse.ok){
+        const lotusData = await lotusResponse.json();
+        setlotus(lotusData || []);
       }
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -109,6 +123,8 @@ const AdminDashboard = () => {
         endpoint = `${API_BASE_URL}/contact/admin/${id}`;
       } else if (type === 'membership') {
         endpoint = `${API_BASE_URL}/membership/admin/${id}`;
+      } else if(type==='lotus'){
+        endpoint = `${BACKEND_URL}/api/forms/${id}`;
       }
 
       const response = await fetch(endpoint, {
@@ -175,6 +191,12 @@ const AdminDashboard = () => {
           onClick={() => setActiveTab('memberships')}
         >
           Memberships ({memberships.length})
+        </button>
+        <button 
+          className={`tab-btn ${activeTab === 'lotus' ? 'active' : ''}`}
+          onClick={() => setActiveTab('lotus')}
+        >
+          Lotus Registartion ({lotus.length})
         </button>
       </div>
 
@@ -330,6 +352,41 @@ const AdminDashboard = () => {
                         Delete
                       </button>
                     </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+        {/* LOTUS REGISTARTION */}
+        {activeTab === 'lotus' && (
+          <div className="lotusregstration-section">
+            <h2>Lotus Registration</h2>
+            {lotus.length === 0 ? (
+              <p className="no-data">No membership applications found.</p>
+            ) : (
+              <div className="data-grid">
+                {lotus.map((lotusItem) => (
+                  <div key={lotus._id} className="data-card">
+                    <div className="card-header">
+                      <h3>{lotusItem.name}</h3>
+                      <span className={`status ${lotusItem.status}`}>
+                        {lotusItem.status}
+                      </span>
+                    </div>
+                    <div className="card-content">
+                      <p><strong>Form Type:</strong> {lotusItem.formType}</p>
+                      <p><strong>Email:</strong> {lotusItem.email}</p>
+                      <p><strong>Phone:</strong> {lotusItem.phone}</p>
+                      <p><strong>Company:</strong> {lotusItem.company || 'N/A'}</p>
+                      <p><strong>Country:</strong> {lotusItem.country}</p>
+                      <p><strong>City:</strong> {lotusItem.city}</p>
+                      <p><strong>Designation:</strong> {lotusItem.designation}</p>
+                      <p><strong>Purpose:</strong> {lotusItem.designation}</p>
+                      <p><strong>Additional Info:</strong> {lotusItem.additionalInfo}</p>
+                      <p><strong>Submitted:</strong> {formatDate(lotusItem.createdAt)}</p>
+                    </div>
+                    <button className='delete-btn' onClick={() => deleteItem('lotus', lotusItem._id)}>Delete</button>
                   </div>
                 ))}
               </div>
