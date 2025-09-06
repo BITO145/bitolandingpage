@@ -12,7 +12,7 @@ const AdminDashboard = () => {
   const [token, setToken] = useState(localStorage.getItem('adminToken'));
   const [lotus,setlotus]= useState([])
   const navigate = useNavigate();
-  const BACKEND_URL = "http://localhost:4000";
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 
   const API_BASE_URL = 'https://bitolandingpage-iyhj.vercel.app/api';
