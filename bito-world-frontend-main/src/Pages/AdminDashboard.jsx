@@ -12,7 +12,7 @@ const AdminDashboard = () => {
   const [token, setToken] = useState(localStorage.getItem('adminToken'));
   const [lotus,setlotus]= useState([])
   const navigate = useNavigate();
-  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+  const BACKEND_URL = import.meta.env.VITE_MEMBERSHIP_BACKEND_URL;
 
 
   const API_BASE_URL = 'https://bitolandingpage-iyhj.vercel.app/api';
@@ -123,6 +123,8 @@ const AdminDashboard = () => {
         endpoint = `${API_BASE_URL}/contact/admin/${id}`;
       } else if (type === 'membership') {
         endpoint = `${API_BASE_URL}/membership/admin/${id}`;
+      } else if(type==='lotus'){
+        endpoint = `${BACKEND_URL}/api/forms/${id}`;
       }
 
       const response = await fetch(endpoint, {
@@ -384,7 +386,7 @@ const AdminDashboard = () => {
                       <p><strong>Additional Info:</strong> {lotusItem.additionalInfo}</p>
                       <p><strong>Submitted:</strong> {formatDate(lotusItem.createdAt)}</p>
                     </div>
-                    
+                    <button className='delete-btn' onClick={() => deleteItem('lotus', lotusItem._id)}>Delete</button>
                   </div>
                 ))}
               </div>
