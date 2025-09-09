@@ -103,8 +103,8 @@ const Footer = () => {
                     <p style={{ fontSize: '15px', fontWeight: '600' }}>Quick Links</p>
                     <a style={{ textDecoration: 'none', color: 'black' }} href="/">Home</a>
                     {/* <li>About</li> */}
-                    <a style={{ textDecoration: 'none', color: 'black' }} href="https://bitoworld.in/old-site/history.php"><li>Our Work</li></a>
-                    <a style={{ textDecoration: 'none', color: 'black' }} href="https://bitoworld.in/old-site/BSIC.php"><li >BSIC</li></a>
+                    <a style={{ textDecoration: 'none', color: 'black' }} href="https://bitoworld.in/history"><li>Our Work</li></a>
+                    <a style={{ textDecoration: 'none', color: 'black' }} href="https://bitoworld.in/BSIC"><li >BSIC</li></a>
                     {/* <li>Chapter</li>
                 <li>Bihar Voice</li> */}
 
@@ -116,7 +116,7 @@ const Footer = () => {
                   <div className="quick-links-2">
                     {/* <li>EOI for BIA</li> */}
 
-                    <Link style={{ textDecoration: 'none', color: 'black' }} to={'https://bitoworld.in/old-site/bitoashmita.php'}>Events</Link>
+                    <Link style={{ textDecoration: 'none', color: 'black' }} to={'https://bitoworld.in/bitoashmita'}>Events</Link>
 
                     {/* <li>Media</li> */}
                     <a style={{ textDecoration: 'none', color: 'black' }} href="https://www.bitojobs.com/"><li>Job</li></a>

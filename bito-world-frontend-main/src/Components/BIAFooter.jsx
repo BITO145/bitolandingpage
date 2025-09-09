@@ -81,7 +81,7 @@ const BIAFooter = () => {
   const quickLinks1 = [
     { label: "Home", url: "/" },
     { label: "About" },
-    { label: "Our Work", url: "https://bitoworld.in/old-site/history.php" },
+    { label: "Our Work", url: "https://bitoworld.in/history" },
     { label: "Chapter" },
     { label: "Bihar Voice" },
   ];
@@ -89,7 +89,7 @@ const BIAFooter = () => {
   const quickLinks2 = [
     { label: "EOI for BIA" },
     { label: "BSIC" },
-    { label: "Events", url: "https://bitoworld.in/old-site/bitoashmita.php" },
+    { label: "Events", url: "https://bitoworld.in/bitoashmita" },
     { label: "Media" },
     { label: "Job", url: "https://www.bitojobs.com/" },
     { label: "Contact" },
