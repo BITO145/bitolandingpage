@@ -112,6 +112,7 @@ import Appointment from './Pages/Appointment'
 import AdminLogin from './Pages/AdminLogin'
 import AdminDashboard from './Pages/AdminDashboard'
 import AdminCMS from './Pages/AdminCMS'
+import Landing from './Components/MembershipLanding/Landing'
 
 
 function slugify(text) {
@@ -176,6 +177,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path='/join-now' element={<Landing />} />
           <Route path="/bia" element={<BIA />} />
           <Route path="/membership" element={<Membership />} />
           <Route path="/thank-you" element={<ThankYou />} />
