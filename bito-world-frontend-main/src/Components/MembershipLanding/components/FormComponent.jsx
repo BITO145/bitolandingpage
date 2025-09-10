@@ -2,7 +2,7 @@ import {  Mail, User, Phone, Building, Briefcase, Globe, MapPin, Target, FileTex
 import React from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-const BACKEND_URL =  import.meta.env.VITE_API_BASE_URL;
+const BACKEND_URL =  import.meta.env.VITE_MEMBERSHIP_BACKEND_URL;
 
 const FormComponent = ({ index }) => {
   const [formData, setFormData] = React.useState({

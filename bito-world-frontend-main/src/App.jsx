@@ -113,6 +113,7 @@ import AdminLogin from './Pages/AdminLogin'
 import AdminDashboard from './Pages/AdminDashboard'
 import AdminCMS from './Pages/AdminCMS'
 import Landing from './Components/MembershipLanding/Landing'
+import { Toaster } from 'react-hot-toast'
 
 
 function slugify(text) {
@@ -203,6 +204,7 @@ const App = () => {
           <Route path="/about" element={<AboutFooter />} />
           <Route path="*" element={<Footer />} />
         </Routes>
+        <Toaster position='bottom-center' reverseOrder={false} />
       </BrowserRouter>
     </>
   );

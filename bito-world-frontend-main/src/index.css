@@ -7,11 +7,6 @@
    font-weight: 200;
 }
 
-.hidden {
-   display: none;
-}
-
-
 @font-face {
    font-family: 'Neulis';
    src: url('./assets/font/fonnts.com-Neulis_Sans_Regular.otf');

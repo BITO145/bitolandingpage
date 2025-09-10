@@ -15,7 +15,7 @@ const AdminDashboard = () => {
   const BACKEND_URL = import.meta.env.VITE_MEMBERSHIP_BACKEND_URL;
 
 
-  const API_BASE_URL = 'https://bitolandingpage-iyhj.vercel.app/api';
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://bitolandingpage-iyhj.vercel.app/api';
 
   useEffect(() => {
     if (!token) {
