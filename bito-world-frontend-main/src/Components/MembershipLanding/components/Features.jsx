@@ -1,33 +1,34 @@
 import { useNavigate } from "react-router-dom";
+import { features } from "../../../utils/constants.js";
 
-const features = [
-  {
-    id: 1,
-    name: "Networking",
-    description:
-      "Connect with business leaders, investors, and global chapters.",
-    icon: new URL("../assets/features/engagement.svg", import.meta.url),
-  },
-  {
-    id: 2,
-    name: "Collaboration",
-    description: "Partner with industries, government bodies, and innovators.",
-    icon: new URL("../assets/features/autonomy.svg", import.meta.url),
-  },
-  {
-    id: 3,
-    name: "Access",
-    description:
-      "Get support to expand your products and services into new markets.",
-    icon: new URL("../assets/features/free.svg", import.meta.url),
-  },
-  {
-    id: 4,
-    name: "Innovation ",
-    description: "Opportunities in AI, Cybersecurity, AgriTech, and more.",
-    icon: new URL("../assets/features/earn.svg", import.meta.url),
-  },
-];
+// const features = [
+//   {
+//     id: 1,
+//     name: "Networking",
+//     description:
+//       "Connect with business leaders, investors, and global chapters.",
+//     icon: new URL("../../assets/features/engagement.svg", import.meta.url),
+//   },
+//   {
+//     id: 2,
+//     name: "Collaboration",
+//     description: "Partner with industries, government bodies, and innovators.",
+//     icon: new URL("../../assets/features/autonomy.svg", import.meta.url),
+//   },
+//   {
+//     id: 3,
+//     name: "Access",
+//     description:
+//       "Get support to expand your products and services into new markets.",
+//     icon: new URL("../../assets/features/free.svg", import.meta.url),
+//   },
+//   {
+//     id: 4,
+//     name: "Innovation ",
+//     description: "Opportunities in AI, Cybersecurity, AgriTech, and more.",
+//     icon: new URL("../../assets/features/earn.svg", import.meta.url),
+//   },
+// ];
 
 function Features() {
   const navigate = useNavigate();

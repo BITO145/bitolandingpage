@@ -23,14 +23,14 @@ function Navigation() {
       </nav>
 
       {/* Desktop Auth Buttons */}
-      <nav className="hidden lg:flex items-center gap-6">
+      {/* <nav className="hidden lg:flex items-center gap-6">
         <a href="https://www.bitoindustriesassociation.com" onClick={handleNav} className="font-medium text-[#b27f49] xl:text-lg hover:text-[#a3703f] transition-colors duration-150 cursor-pointer">
           Sign in
         </a>
         <button onClick={handleNav} className="bg-[#b27f49] hover:bg-[#a3703f] px-6 py-3 xl:px-8 xl:py-4 rounded-2xl text-white xl:text-lg transition-all duration-200">
           Get Started
         </button>
-      </nav>
+      </nav> */}
 
       {/* Mobile Hamburger */}
       <div className="lg:hidden">
@@ -67,12 +67,12 @@ function Navigation() {
                 &times;
               </button>
             </div>
-            <a href="https://www.bitoindustriesassociation.com" onClick={handleNav} className="font-medium text-[#b27f49] text-lg hover:text-[#a3703f] transition-colors duration-150">
+            {/* <a href="https://www.bitoindustriesassociation.com" onClick={handleNav} className="font-medium text-[#b27f49] text-lg hover:text-[#a3703f] transition-colors duration-150">
               Sign in
             </a>
             <button onClick={handleNav} className="bg-[#b27f49] hover:bg-[#a3703f] px-6 py-3 rounded-2xl text-white text-lg transition-all duration-200">
               Get Started
-            </button>
+            </button> */}
           </div>
         </div>
       )}

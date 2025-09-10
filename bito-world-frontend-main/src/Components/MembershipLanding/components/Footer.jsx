@@ -1,40 +1,41 @@
 import { useNavigate } from "react-router-dom";
+import { footerSocials,footerCols } from "../../../utils/constants.js";
 
-const footerCols = [
-  {
-    id: 1,
-    heading: "About",
-    links: ["How it works", "Company", "Help & support"],
-  },
+// const footerCols = [
+//   {
+//     id: 1,
+//     heading: "About",
+//     links: ["How it works", "Company", "Help & support"],
+//   },
 
-  {
-    id: 4,
-    heading: "Support",
-    links: [
-      { label: "Shipping Policy", path: "/shipping-policy" },
-      { label: "Cookies policy", path: "/cookie-policy" },
-      { label: "Privacy policy", path: "/privacy-policy" },
-    ],
-  },
-];
+//   {
+//     id: 4,
+//     heading: "Support",
+//     links: [
+//       { label: "Shipping Policy", path: "/shipping-policy" },
+//       { label: "Cookies policy", path: "/cookie-policy" },
+//       { label: "Privacy policy", path: "/privacy-policy" },
+//     ],
+//   },
+// ];
 
-const footerSocials = [
-  {
-    id: 1,
-    name: "Meta (formerly facebook)",
-    logo: new URL("../assets/socials/facebook.svg", import.meta.url),
-  },
-  {
-    id: 2,
-    name: "X (formerly twitter)",
-    logo: new URL("../assets/socials/twitter.svg", import.meta.url),
-  },
-  {
-    id: 3,
-    name: "Instagram",
-    logo: new URL("../assets/socials/instagram.svg", import.meta.url),
-  },
-];
+// const footerSocials = [
+//   {
+//     id: 1,
+//     name: "Meta (formerly facebook)",
+//     logo: new URL("../assets/socials/facebook.svg", import.meta.url),
+//   },
+//   {
+//     id: 2,
+//     name: "X (formerly twitter)",
+//     logo: new URL("../assets/socials/twitter.svg", import.meta.url),
+//   },
+//   {
+//     id: 3,
+//     name: "Instagram",
+//     logo: new URL("../assets/socials/instagram.svg", import.meta.url),
+//   },
+// ];
 
 
 function Footer() {
