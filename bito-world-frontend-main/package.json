@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:tailwind": "tailwindcss -c ./src/Components/MembershipLanding/tailwind.config.js -i ./src/Components/MembershipLanding/tailwind.css -o ./src/Components/MembershipLanding/tailwind-built.css --watch",
     "lint": "eslint .",
     "preview": "vite preview"
   },

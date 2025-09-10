@@ -1,13 +1,16 @@
-@import "tailwindcss";
+@layer bootstrap, tailwind;
+
+@import "tailwindcss" layer(tailwind);
 
 .right-heading h6 {
    font-size: 23px;
    font-weight: 200;
 }
 
-p {
-   font-size: 15px;
+.hidden {
+   display: none;
 }
+
 
 @font-face {
    font-family: 'Neulis';

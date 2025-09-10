@@ -4,6 +4,24 @@ import gsap from "gsap";
 import FormComponent from "./FormComponent";
 import { ChevronDown } from "lucide-react";
 
+// Font sizes for responsive design - using inline styles to avoid Tailwind conflicts
+const FONT_SIZES = {
+  learnMore: {
+    mobile: { fontSize: '12px', lineHeight: '1.4' },
+    tablet: { fontSize: '14px', lineHeight: '1.4' },
+    desktop: { fontSize: '16px', lineHeight: '1.4' }
+  },
+  title: {
+    mobile: { fontSize: '14px', lineHeight: '1.2', fontWeight: 'bold' },
+    tablet: { fontSize: '18px', lineHeight: '1.2', fontWeight: 'bold' },
+    desktop: { fontSize: '22px', lineHeight: '1.2', fontWeight: 'bold' }
+  },
+  description: {
+    mobile: { fontSize: '12px', lineHeight: '1.5' },
+    tablet: { fontSize: '14px', lineHeight: '1.5' },
+    desktop: { fontSize: '16px', lineHeight: '1.5' }
+  }
+};
 
 const CLASSES = {
   // global layout & grid base
@@ -64,19 +82,19 @@ const CLASSES = {
     },
     translate: { mobile: "", tablet: "", desktop: "" },
     learnMore: {
-      mobile: "text-[7px] text-[#b27f49] group-hover:underline",
-      tablet: "text-[10px] text-[#b27f49] group-hover:underline",
-      desktop: "text-[7px] sm:text-sm text-[#b27f49] group-hover:underline",
+      mobile: "text-[#b27f49] group-hover:underline",
+      tablet: "text-[#b27f49] group-hover:underline",
+      desktop: "text-[#b27f49] group-hover:underline",
     },
     title: {
-      mobile: "font-bold text-[#b27f49] text-[10px]",
-      tablet: "font-bold text-[#b27f49] text-[12px]",
-      desktop: "font-bold text-[#b27f49] text-[12px] md:text-base",
+      mobile: "text-[#b27f49]",
+      tablet: "text-[#b27f49]",
+      desktop: "text-[#b27f49]",
     },
     description: {
-      mobile: "text-[9px] text-gray-700 line-clamp-5",
-      tablet: "text-[10px] text-gray-700 line-clamp-5",
-      desktop: "text-[9px] md:text-sm text-gray-700 line-clamp-5",
+      mobile: "text-gray-700 line-clamp-3",
+      tablet: "text-gray-700 line-clamp-5",
+      desktop: "text-gray-700 line-clamp-5",
     },
 
     // connector: container + parts
@@ -124,19 +142,19 @@ const CLASSES = {
       desktop: "-translate-y-8",
     },
     learnMore: {
-      mobile: "text-[7px] text-[#b27f49] group-hover:underline",
-      tablet: "text-[10px] text-[#b27f49] group-hover:underline",
-      desktop: "text-[7px] sm:text-sm text-[#b27f49] group-hover:underline",
+      mobile: "text-[#b27f49] group-hover:underline",
+      tablet: "text-[#b27f49] group-hover:underline",
+      desktop: "text-[#b27f49] group-hover:underline",
     },
     title: {
-      mobile: "font-bold text-[#b27f49] text-[10px]",
-      tablet: "font-bold text-[#b27f49] text-[12px]",
-      desktop: "font-bold text-[#b27f49] text-[12px] md:text-base",
+      mobile: "text-[#b27f49]",
+      tablet: "text-[#b27f49]",
+      desktop: "text-[#b27f49]",
     },
     description: {
-      mobile: "text-[9px] text-gray-700 line-clamp-5",
-      tablet: "text-[10px] text-gray-700 line-clamp-5",
-      desktop: "text-[9px] md:text-sm text-gray-700 line-clamp-5",
+      mobile: "text-gray-700 line-clamp-3",
+      tablet: "text-gray-700 line-clamp-5",
+      desktop: "text-gray-700 line-clamp-5",
     },
 
     // connector container + parts (horizontal line + vertical group)
@@ -220,19 +238,19 @@ const CLASSES = {
       desktop: "-translate-y-8",
     },
     learnMore: {
-      mobile: "text-[7px] text-[#b27f49] group-hover:underline",
-      tablet: "text-[10px] text-[#b27f49] group-hover:underline",
-      desktop: "text-[7px] sm:text-sm text-[#b27f49] group-hover:underline",
+      mobile: "text-[#b27f49] group-hover:underline",
+      tablet: "text-[#b27f49] group-hover:underline",
+      desktop: "text-[#b27f49] group-hover:underline",
     },
     title: {
-      mobile: "font-bold text-[#b27f49] text-[10px]",
-      tablet: "font-bold text-[#b27f49] text-[12px]",
-      desktop: "font-bold text-[#b27f49] text-[12px] md:text-base",
+      mobile: "text-[#b27f49]",
+      tablet: "text-[#b27f49]",
+      desktop: "text-[#b27f49]",
     },
     description: {
-      mobile: "text-[9px] text-gray-700 line-clamp-5",
-      tablet: "text-[10px] text-gray-700 line-clamp-5",
-      desktop: "text-[9px] md:text-sm text-gray-700 line-clamp-5",
+      mobile: "text-gray-700 line-clamp-3",
+      tablet: "text-gray-700 line-clamp-5",
+      desktop: "text-gray-700 line-clamp-5",
     },
   },
 
@@ -256,19 +274,19 @@ const CLASSES = {
     },
     translate: { mobile: "", tablet: "", desktop: "" },
     learnMore: {
-      mobile: "text-[7px] text-[#b27f49] group-hover:underline",
-      tablet: "text-[10px] text-[#b27f49] group-hover:underline",
-      desktop: "text-[7px] sm:text-sm text-[#b27f49] group-hover:underline",
+      mobile: "text-[#b27f49] group-hover:underline",
+      tablet: "text-[#b27f49] group-hover:underline",
+      desktop: "text-[#b27f49] group-hover:underline",
     },
     title: {
-      mobile: "font-bold text-[#b27f49] text-[10px]",
-      tablet: "font-bold text-[#b27f49] text-[12px]",
-      desktop: "font-bold text-[#b27f49] text-[12px] md:text-base",
+      mobile: "text-[#b27f49]",
+      tablet: "text-[#b27f49]",
+      desktop: "text-[#b27f49]",
     },
     description: {
-      mobile: "text-[9px] text-gray-700 line-clamp-5",
-      tablet: "text-[10px] text-gray-700 line-clamp-5",
-      desktop: "text-[9px] md:text-sm text-gray-700 line-clamp-5",
+      mobile: "text-gray-700 line-clamp-3",
+      tablet: "text-gray-700 line-clamp-5",
+      desktop: "text-gray-700 line-clamp-5",
     },
     connector: {
       mobile: "flex items-end ml-2",
@@ -346,19 +364,19 @@ const CLASSES = {
     },
     translate: { mobile: "", tablet: "", desktop: "" },
     learnMore: {
-      mobile: "text-[7px] text-[#b27f49] group-hover:underline",
-      tablet: "text-[10px] text-[#b27f49] group-hover:underline",
-      desktop: "text-[7px] sm:text-sm text-[#b27f49] group-hover:underline",
+      mobile: "text-[#b27f49] group-hover:underline",
+      tablet: "text-[#b27f49] group-hover:underline",
+      desktop: "text-[#b27f49] group-hover:underline",
     },
     title: {
-      mobile: "font-bold text-[#b27f49] text-[10px]",
-      tablet: "font-bold text-[#b27f49] text-[12px]",
-      desktop: "font-bold text-[#b27f49] text-[12px] md:text-base",
+      mobile: "text-[#b27f49]",
+      tablet: "text-[#b27f49]",
+      desktop: "text-[#b27f49]",
     },
     description: {
-      mobile: "text-[9px] text-gray-700 line-clamp-5",
-      tablet: "text-[10px] text-gray-700 line-clamp-5",
-      desktop: "text-[9px] md:text-sm text-gray-700 line-clamp-5",
+      mobile: "text-gray-700 line-clamp-3",
+      tablet: "text-gray-700 line-clamp-5",
+      desktop: "text-gray-700 line-clamp-5",
     },
   },
 };
@@ -704,9 +722,9 @@ export default function Dashboard() {
           <div className={CLASSES.industrial.wrapper[viewKey]}>
             <div className={CLASSES.industrial.innerWrapper[viewKey]}>
               <div className={cardClass("industrial", CLASSES.industrial.index)} onClick={() => onCardClick(CLASSES.industrial.index)}>
-                <p className={CLASSES.industrial.learnMore[viewKey]}>Learn More {">"}</p>
-                <h3 className={CLASSES.industrial.title[viewKey]}>Industrial Growth:</h3>
-                <p className={CLASSES.industrial.description[viewKey]}>
+                <p className={CLASSES.industrial.learnMore[viewKey]} style={FONT_SIZES.learnMore[viewKey]}>Learn More {">"}</p>
+                <h3 className={CLASSES.industrial.title[viewKey]} style={FONT_SIZES.title[viewKey]}>Industrial Growth:</h3>
+                <p className={CLASSES.industrial.description[viewKey]} style={FONT_SIZES.description[viewKey]}>
                   Invest in startups across manufacturing, FMCG, and infrastructure to drive economic development.
                 </p>
               </div>
@@ -721,9 +739,9 @@ export default function Dashboard() {
           {/* Healthcare */}
           <div className={CLASSES.healthEducation.wrapper[viewKey]}>
             <div className={cardClass("healthEducation", CLASSES.healthEducation.index)} onClick={() => onCardClick(CLASSES.healthEducation.index)}>
-              <p className={CLASSES.healthEducation.learnMore[viewKey]}>Learn More {">"}</p>
-              <h3 className={CLASSES.healthEducation.title[viewKey]}>Healthcare & Education:</h3>
-              <p className={CLASSES.healthEducation.description[viewKey]}>
+              <p className={CLASSES.healthEducation.learnMore[viewKey]} style={FONT_SIZES.learnMore[viewKey]}>Learn More {">"}</p>
+              <h3 className={CLASSES.healthEducation.title[viewKey]} style={FONT_SIZES.title[viewKey]}>Healthcare & Education:</h3>
+              <p className={CLASSES.healthEducation.description[viewKey]} style={FONT_SIZES.description[viewKey]}>
                 Collaborate to expand the BITO Multi-Specialty Hospital and establish Bihar University.
               </p>
             </div>
@@ -755,9 +773,9 @@ export default function Dashboard() {
             </div>
 
             <div className={cardClass("startup", CLASSES.startup.index)} onClick={() => onCardClick(CLASSES.startup.index)}>
-              <p className={CLASSES.startup.learnMore[viewKey]}>Learn More {">"}</p>
-              <h3 className={CLASSES.startup.title[viewKey]}>Startup Incubation:</h3>
-              <p className={CLASSES.startup.description[viewKey]}>
+              <p className={CLASSES.startup.learnMore[viewKey]} style={FONT_SIZES.learnMore[viewKey]}>Learn More {">"}</p>
+              <h3 className={CLASSES.startup.title[viewKey]} style={FONT_SIZES.title[viewKey]}>Startup Incubation:</h3>
+              <p className={CLASSES.startup.description[viewKey]} style={FONT_SIZES.description[viewKey]}>
                 Partner with our incubation centers to support sectors like agriculture, food processing, and FMCG.
               </p>
             </div>
@@ -766,9 +784,9 @@ export default function Dashboard() {
           {/* Green Growth */}
           <div className={CLASSES.greenGrowth.wrapper[viewKey]}>
             <div className={cardClass("greenGrowth", CLASSES.greenGrowth.index)} onClick={() => onCardClick(CLASSES.greenGrowth.index)}>
-              <p className={CLASSES.greenGrowth.learnMore[viewKey]}>Learn More {">"}</p>
-              <h3 className={CLASSES.greenGrowth.title[viewKey]}>Green Growth:</h3>
-              <p className={CLASSES.greenGrowth.description[viewKey]}>
+              <p className={CLASSES.greenGrowth.learnMore[viewKey]} style={FONT_SIZES.learnMore[viewKey]}>Learn More {">"}</p>
+              <h3 className={CLASSES.greenGrowth.title[viewKey]} style={FONT_SIZES.title[viewKey]}>Green Growth:</h3>
+              <p className={CLASSES.greenGrowth.description[viewKey]} style={FONT_SIZES.description[viewKey]}>
                 Champion eco-friendly industrial practices that balance development with environmental stewardship.
               </p>
             </div>
@@ -793,9 +811,9 @@ export default function Dashboard() {
             </div>
 
             <div className={cardClass("technology", CLASSES.technology.index)} onClick={() => onCardClick(CLASSES.technology.index)}>
-              <p className={CLASSES.technology.learnMore[viewKey]}>Learn More {">"}</p>
-              <h3 className={CLASSES.technology.title[viewKey]}>Transform Through Technology:</h3>
-              <p className={CLASSES.technology.description[viewKey]}>
+              <p className={CLASSES.technology.learnMore[viewKey]} style={FONT_SIZES.learnMore[viewKey]}>Learn More {">"}</p>
+              <h3 className={CLASSES.technology.title[viewKey]} style={FONT_SIZES.title[viewKey]}>Transform Through Technology:</h3>
+              <p className={CLASSES.technology.description[viewKey]} style={FONT_SIZES.description[viewKey]}>
                 Invest in Cyber Security, Machine Learning, and Artificial Intelligence to drive innovation and secure Bihar's digital future.
               </p>
             </div>

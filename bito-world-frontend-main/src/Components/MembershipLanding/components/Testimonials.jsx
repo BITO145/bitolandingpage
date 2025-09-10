@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Testimonial from "./Testimonial";
 import { testimonials } from "../../../utils/constants.js";
 
@@ -37,9 +38,67 @@ import { testimonials } from "../../../utils/constants.js";
 // ];
 
 function Testimonials() {
+  const [viewportWidth, setViewportWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+
+  useEffect(() => {
+    const handleResize = () => setViewportWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const getResponsiveStyles = () => {
+    if (viewportWidth >= 1280) {
+      return {
+        section: { maxWidth: '90rem', paddingTop: '6rem', paddingBottom: '6rem' },
+        h2: { 
+          paddingLeft: '6rem', paddingRight: '6rem', 
+          paddingBottom: '4rem',
+          fontSize: '3.5rem', lineHeight: '4rem' 
+        },
+        gradientLeft: { width: '16rem' },
+        gradientRight: { width: '16rem' }
+      };
+    } else if (viewportWidth >= 768) {
+      return {
+        section: { maxWidth: '90rem', paddingTop: '4rem', paddingBottom: '4rem' },
+        h2: { 
+          paddingLeft: '4rem', paddingRight: '4rem', 
+          paddingBottom: '4rem',
+          fontSize: '3rem', lineHeight: '1' 
+        },
+        gradientLeft: { width: '8rem' },
+        gradientRight: { width: '8rem' }
+      };
+    } else if (viewportWidth >= 640) {
+      return {
+        section: { maxWidth: '90rem', paddingTop: '4rem', paddingBottom: '4rem' },
+        h2: { 
+          paddingLeft: '2rem', paddingRight: '2rem', 
+          paddingBottom: '3.5rem',
+          fontSize: '2.25rem', lineHeight: '2.5rem' 
+        },
+        gradientLeft: { width: '8rem' },
+        gradientRight: { width: '8rem' }
+      };
+    } else {
+      return {
+        section: { maxWidth: '90rem', paddingTop: '3rem', paddingBottom: '3rem' },
+        h2: { 
+          paddingLeft: '1rem', paddingRight: '1rem', 
+          paddingBottom: '3rem',
+          fontSize: '2rem', lineHeight: '2.5rem' 
+        },
+        gradientLeft: { width: '0rem' },
+        gradientRight: { width: '0rem' }
+      };
+    }
+  };
+
+  const styles = getResponsiveStyles();
+
   return (
-    <section className="m-auto py-12 sm:py-16 xl:py-24 max-w-[90rem]">
-      <h2 className="px-4 sm:px-8 md:px-16 xl:px-24 pb-12 sm:pb-14 md:pb-16 font-bold text-[2rem]/[2.5rem] text-primary-500 sm:text-4xl md:text-5xl xl:text-[3.5rem]/[4rem] tracking-tight">
+    <section className="m-auto" style={styles.section}>
+      <h2 className="font-bold text-primary-500 tracking-tight" style={styles.h2}>
         Listen to what our{" "}
         <span className="underline underline-offset-2 decoration-8 decoration-accent-500">
           satisfied
@@ -49,8 +108,8 @@ function Testimonials() {
       </h2>
 
       <div className="relative">
-        <div className="top-0 left-0 z-10 absolute bg-gradient-to-r from-white to-transparent sm:w-32 xl:w-64 h-full" />
-        <div className="top-0 right-0 z-10 absolute bg-gradient-to-l from-white to-transparent sm:w-32 xl:w-64 h-full" />
+        <div className="top-0 left-0 z-10 absolute bg-gradient-to-r from-white to-transparent" style={{ ...styles.gradientLeft, height: '100%' }} />
+        <div className="top-0 right-0 z-10 absolute bg-gradient-to-l from-white to-transparent" style={{ ...styles.gradientRight, height: '100%' }} />
 
         {/* TESTIMONIAL ROW 1 */}
         <div className="bg-white mb-4 lg:mb-6 whitespace-nowrap overflow-hidden">

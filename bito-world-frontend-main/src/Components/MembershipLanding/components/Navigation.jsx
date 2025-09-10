@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Hamurger from "./Hamurger";
 
 function Navigation() {
@@ -7,17 +7,37 @@ function Navigation() {
     window.location.href = "https://www.bitoindustriesassociation.com";
   };
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
+  const [viewportWidth, setViewportWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+
+  useEffect(() => {
+    const handleResize = () => setViewportWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const getHeaderStyle = () => ({
+    width: '100%',
+    maxWidth: '90rem',
+    paddingLeft: viewportWidth >= 1280 ? '6rem' : viewportWidth >= 768 ? '4rem' : viewportWidth >= 640 ? '2rem' : '1rem',
+    paddingRight: viewportWidth >= 1280 ? '6rem' : viewportWidth >= 768 ? '4rem' : viewportWidth >= 640 ? '2rem' : '1rem',
+  });
+
+  const getLogoStyle = () => ({
+    height: '2.5rem',
+    transform: 'scale(1.5)'
+  });
 
   return (
-    <header className="w-full px-4 sm:px-8 md:px-16 xl:px-24 py-6 flex justify-between items-center max-w-[90rem] mx-auto relative z-50">
+    <header className="py-6 flex justify-between items-center mx-auto relative z-50" style={getHeaderStyle()}>
       {/* Left: Logo + Nav Links */}
       <nav className="flex items-center gap-10">
         <a href="/" aria-label="BITO Home">
           <img
             src="/dark logo.png"
             alt="BITO Industries Association Logo"
-            className="h-10 object-contain scale-150"
+            className="object-contain"
+            style={getLogoStyle()}
           />
         </a>
       </nav>
@@ -46,7 +66,7 @@ function Navigation() {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 backdrop-blur-xs bg-opacity-60 z-50 flex justify-end">
-          <div className="w-3/4 max-w-xs bg-white h-full shadow-lg p-6 flex flex-col gap-8 [animation:slide-in_0.3s_ease-out]">
+          <div className="bg-white shadow-lg p-6 flex flex-col gap-8 [animation:slide-in_0.3s_ease-out]" style={{ width: '75%', maxWidth: '20rem', height: '100%' }}>
             <div className="flex justify-between items-center mb-4">
               <a
                 href="/"
@@ -56,13 +76,15 @@ function Navigation() {
                 <img
                   src="/dark logo.png"
                   alt="BITO Industries Association Logo"
-                  className="h-10 object-contain scale-150"
+                  className="object-contain"
+                  style={getLogoStyle()}
                 />
               </a>
               <button
                 aria-label="Close menu"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-bold text-[#b27f49] hover:text-[#a3703f] focus:outline-none"
+                className="font-bold text-[#b27f49] hover:text-[#a3703f] focus:outline-none"
+                style={{ fontSize: '1.5rem' }}
               >
                 &times;
               </button>

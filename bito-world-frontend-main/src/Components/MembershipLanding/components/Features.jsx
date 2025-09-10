@@ -67,7 +67,7 @@ function Features() {
                 alt={feature.name}
                 className="mb-6 w-20 h-20 sm:w-24 sm:h-24 object-contain mx-auto sm:mx-0"
               />
-              <h4 className="mb-2 font-bold text-xl text-[#b27f49]">
+              <h4 className="mb-2 font-bold text-2xl text-[#b27f49]">
                 {feature.name}
               </h4>
               <p className="text-gray-700 xl:text-lg">{feature.description}</p>

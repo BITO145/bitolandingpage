@@ -23,7 +23,7 @@ export default function WhoWeAreSection() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-4 text-[#b27f49]">
+            <h3 className="text-3xl font-semibold mb-4 text-[#b27f49]">
               BITO
             </h3>
             <p className="text-gray-700 mb-6 leading-relaxed">

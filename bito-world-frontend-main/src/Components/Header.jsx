@@ -12,6 +12,10 @@ const Header = () => {
   const handleClose = () => setShowOffcanvas(false);
   const handleShow = () => setShowOffcanvas(true);
 
+  if (window.location.pathname.includes('join-now')) {
+    return null; // Do not render the header on the join-now page 
+  }
+
   return (
     <>
       {/* Desktop Navbar */}

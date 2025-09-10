@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+/* Force Tailwind to scan this file and generate utilities */
+@source "./src/Components/MembershipLanding/**/*.{js,jsx,ts,tsx}";
+
+/* Test styles to verify Tailwind is working */
+.test-tailwind {
+  background-color: red;
+  color: white;
+  padding: 1rem;
+}

@@ -4,7 +4,7 @@ function Hero() {
       <div className="flex flex-nowrap justify-between md:gap-x-24 lg:gap-x-14 flex-col md:flex-row">
         {/* Left Text Section */}
         <div className="max-w-[50rem]">
-          <h1 className="mb-8 font-bold text-3xl sm:text-4xl md:text-5xl/[3.5rem] lg:text-6xl/[4rem] xl:text-7xl/[5rem] tracking-tight text-black">
+          <h1 className="mb-8 font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight text-black">
             Unlock Opportunities with{" "}
             <span className="text-[#b27f49]">BITO</span>
           </h1>
@@ -26,10 +26,10 @@ function Hero() {
 
         {/* Right Figure / Badge */}
         <figure>
-          <div className="lg:flex justify-center items-center hidden xl:mr-8 rounded-full w-52 h-52 outline outline-1 outline-[#b27f49] bg-white overflow-hidden">
+          <div className="lg:flex justify-center items-center max-lg:hidden xl:mr-8 rounded-full w-52 h-52 outline-1 outline-[#b27f49] bg-white overflow-hidden">
             <div className="flex justify-center items-center rounded-full w-44 h-44 bg-[#b27f49]">
               <img
-                src="/LOGOWHITE.png" // Absolute path from public folder
+                src="/LOGOWHITE.png"
                 alt="BITO Logo"
                 className="w-32 h-32 object-contain"
               />
