@@ -12,6 +12,10 @@ const Header = () => {
   const handleClose = () => setShowOffcanvas(false);
   const handleShow = () => setShowOffcanvas(true);
 
+  if (window.location.pathname.includes('join-now')) {
+    return null; // Do not render the header on the join-now page 
+  }
+
   return (
     <>
       {/* Desktop Navbar */}
@@ -45,13 +49,37 @@ const Header = () => {
           </Link>
 
           {/* Right Nav Links (Desktop Only) */}
-          <Nav className="ms-auto d-none d-lg-flex">
+          <Nav className="ms-auto d-none d-lg-flex align-items-center">
             <Nav.Link as={Link} to="/events" className="text-white">Events</Nav.Link>
             <Nav.Link as={Link} to="/appointment" className="text-white">Book Appointment</Nav.Link>
             {/* <Nav.Link href="#media" className="text-white">Media</Nav.Link> */}
             <Nav.Link href="https://www.bitojobs.com/" target="_blank" rel="noopener noreferrer" className="text-white">BITO Jobs</Nav.Link>
             <Nav.Link as={Link} to="/contact-us" className="text-white">Contact</Nav.Link>
             <Nav.Link as={Link} to="/membership" className="text-white">Membership</Nav.Link>
+            <a
+              // href="https://www.join.bitoindustriesassociation.com/"
+              href="/join-now"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                marginLeft: '18px',
+                padding: '8px 22px',
+                background: 'linear-gradient(90deg, #ffb347 0%, #ffcc33 100%)',
+                color: '#222',
+                borderRadius: '30px',
+                fontWeight: 600,
+                fontSize: '1rem',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                border: 'none',
+                textDecoration: 'none',
+                transition: 'background 0.2s, color 0.2s',
+                letterSpacing: '0.5px',
+                display: 'inline-block',
+              }}
+              className="join-now-btn"
+            >
+              Join Now
+            </a>
           </Nav>
         </Container>
 
@@ -101,6 +129,32 @@ const Header = () => {
             <Nav.Link as={Link} to="/membership" className="text-dark" onClick={handleClose}>
               Membership
             </Nav.Link>
+            <a
+              // href="https://www.join.bitoindustriesassociation.com/"
+              href="/join-now"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                margin: '18px 0 0 0',
+                padding: '10px 0',
+                background: 'linear-gradient(90deg, #ffb347 0%, #ffcc33 100%)',
+                color: '#222',
+                borderRadius: '30px',
+                fontWeight: 600,
+                fontSize: '1.1rem',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                border: 'none',
+                textDecoration: 'none',
+                transition: 'background 0.2s, color 0.2s',
+                letterSpacing: '0.5px',
+                textAlign: 'center',
+                display: 'block',
+              }}
+              className="join-now-btn"
+              onClick={handleClose}
+            >
+              Join Now
+            </a>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>

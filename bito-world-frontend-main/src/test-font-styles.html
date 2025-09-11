@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Style Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+        
+        .device-label {
+            background: #333;
+            color: #ffd700;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .element-test {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #2a2a2a;
+            border-radius: 4px;
+        }
+        
+        .element-label {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dashboard Font Styles Test</h1>
+    
+    <div class="test-section">
+        <div class="device-label">Mobile (12px learnMore/description, 14px title)</div>
+        
+        <div class="element-test">
+            <div class="element-label">learnMore:</div>
+            <div style="font-size: 12px; line-height: 1.4;">Learn More Sample Text</div>
+        </div>
+        
+        <div class="element-test">
+            <div class="element-label">title:</div>
+            <div style="font-size: 14px; line-height: 1.4;">Title Sample Text</div>
+        </div>
+        
+        <div class="element-test">
+            <div class="element-label">description:</div>
+            <div style="font-size: 12px; line-height: 1.4;">Description sample text that shows how the font size appears on mobile devices.</div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <div class="device-label">Tablet (14px learnMore/description, 18px title)</div>
+        
+        <div class="element-test">
+            <div class="element-label">learnMore:</div>
+            <div style="font-size: 14px; line-height: 1.4;">Learn More Sample Text</div>
+        </div>
+        
+        <div class="element-test">
+            <div class="element-label">title:</div>
+            <div style="font-size: 18px; line-height: 1.4;">Title Sample Text</div>
+        </div>
+        
+        <div class="element-test">
+            <div class="element-label">description:</div>
+            <div style="font-size: 14px; line-height: 1.4;">Description sample text that shows how the font size appears on tablet devices.</div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <div class="device-label">Desktop (16px learnMore/description, 22px title)</div>
+        
+        <div class="element-test">
+            <div class="element-label">learnMore:</div>
+            <div style="font-size: 16px; line-height: 1.4;">Learn More Sample Text</div>
+        </div>
+        
+        <div class="element-test">
+            <div class="element-label">title:</div>
+            <div style="font-size: 22px; line-height: 1.4;">Title Sample Text</div>
+        </div>
+        
+        <div class="element-test">
+            <div class="element-label">description:</div>
+            <div style="font-size: 16px; line-height: 1.4;">Description sample text that shows how the font size appears on desktop devices.</div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <div class="device-label">Debugging Info</div>
+        <div>
+            <strong>Expected Font Hierarchy:</strong><br>
+            • learnMore and description: Same size<br>
+            • title: One size larger than learnMore/description<br><br>
+            
+            <strong>Implementation:</strong><br>
+            • Mobile: 12px (learnMore/desc) → 14px (title)<br>
+            • Tablet: 14px (learnMore/desc) → 18px (title)<br>
+            • Desktop: 16px (learnMore/desc) → 22px (title)
+        </div>
+    </div>
+    
+    <script>
+        // Add window resize detection for testing
+        function showCurrentViewport() {
+            const width = window.innerWidth;
+            let device = 'Desktop';
+            if (width < 640) device = 'Mobile';
+            else if (width < 768) device = 'Tablet';
+            
+            console.log(`Current viewport: ${width}px (${device})`);
+            
+            // Add a visual indicator
+            const indicator = document.getElementById('viewport-indicator') || document.createElement('div');
+            indicator.id = 'viewport-indicator';
+            indicator.style.cssText = `
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                background: #ffd700;
+                color: #000;
+                padding: 5px 10px;
+                border-radius: 4px;
+                font-weight: bold;
+                z-index: 9999;
+            `;
+            indicator.textContent = `${device}: ${width}px`;
+            
+            if (!document.getElementById('viewport-indicator')) {
+                document.body.appendChild(indicator);
+            }
+        }
+        
+        showCurrentViewport();
+        window.addEventListener('resize', showCurrentViewport);
+    </script>
+</body>
+</html>

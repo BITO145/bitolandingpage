@@ -11,6 +11,9 @@ import Youtube from "../assets/youtube.png";
 
 const Footer = () => {
 
+  if (window.location.pathname.includes('join-now')) {
+    return null; // Do not render the footer on the join-now page 
+  }
 
   return (
     <>

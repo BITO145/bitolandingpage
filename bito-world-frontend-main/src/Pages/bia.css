@@ -46,9 +46,6 @@ h6 {
   font-size: 12px;
   font-weight: 700;
 }
-p {
-  font-size: 16px !important;
-}
 
 .bia-img {
   background-image: url("../assets/bia/bia-banner.png");
@@ -315,9 +312,6 @@ p {
 }
 
 @media (max-width: 767px) {
-  p {
-  font-size: 14px !important;
-}
   .bia-img {
     padding-bottom: 75px;
     padding-top: 280px;
