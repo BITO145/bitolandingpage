@@ -1,8 +1,18 @@
-import {  Mail, User, Phone, Building, Briefcase, Globe, MapPin, Target, FileText } from "lucide-react";
+import {
+  Mail,
+  User,
+  Phone,
+  Building,
+  Briefcase,
+  Globe,
+  MapPin,
+  Target,
+  FileText,
+} from "lucide-react";
 import React from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-const BACKEND_URL =  import.meta.env.VITE_MEMBERSHIP_BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_MEMBERSHIP_BACKEND_URL;
 
 const FormComponent = ({ index }) => {
   const [formData, setFormData] = React.useState({
@@ -20,28 +30,30 @@ const FormComponent = ({ index }) => {
   const [isLoading, setIsLoading] = React.useState(false);
 
   const sectionTitles = {
-    0: ["Industrial Growth","industrial"],
-    1: ["Healthcare & Education","healthcare"],
-    2: ["Startup Incubation","startup"], 
-    3: ["Green Growth","green"],
-    4: ["Transform Through Technology","technology"]
+    0: ["Industrial Growth", "industrial"],
+    1: ["Healthcare & Education", "healthcare"],
+    2: ["Startup Incubation", "startup"],
+    3: ["Green Growth", "green"],
+    4: ["Transform Through Technology", "technology"],
   };
-  
 
   const onsubmit = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     setIsLoading(true);
     setMessage("");
     const submissionData = {
-    ...formData,
-    section: sectionTitles[index][1],
-    formType: sectionTitles[index][1] 
-  };
+      ...formData,
+      section: sectionTitles[index][1],
+      formType: sectionTitles[index][1],
+    };
     try {
-      const response = await axios.post(`${BACKEND_URL}/api/forms`, submissionData);
-      setMessage('Registration successful!');
-      toast.success('Registration successful!');
-      console.log('User registered:', response.data);
+      const response = await axios.post(
+        `${BACKEND_URL}/api/forms`,
+        submissionData
+      );
+      setMessage("Registration successful!");
+      toast.success("Registration successful!");
+      console.log("User registered:", response.data);
       setFormData({
         formType: "",
         name: "",
@@ -55,9 +67,9 @@ const FormComponent = ({ index }) => {
         additionalInfo: "",
       });
     } catch (error) {
-      setMessage('Registration failed: ' + error.response?.data?.message);
-      console.error('Registration error:', error);
-      toast.error('Registration failed. Please try again.');
+      setMessage("Registration failed: " + error.response?.data?.message);
+      console.error("Registration error:", error);
+      toast.error("Registration failed. Please try again.");
       setFormData({
         name: "",
         email: "",
@@ -72,8 +84,7 @@ const FormComponent = ({ index }) => {
     } finally {
       setIsLoading(false);
     }
-
-  }
+  };
 
   const [errors, setErrors] = React.useState({});
 
@@ -82,15 +93,14 @@ const FormComponent = ({ index }) => {
 
     let processedValue = value;
 
-    if (name === 'phone') {
-      processedValue = value
+    if (name === "phone") {
+      processedValue = value;
       if (processedValue.length > 10) {
         processedValue = processedValue.slice(0, 10);
       }
     }
     setFormData((prev) => ({ ...prev, [name]: processedValue }));
     setErrors((prev) => ({ ...prev, [name]: "" }));
-
   };
 
   // Map card index to video sources
@@ -109,19 +119,19 @@ const FormComponent = ({ index }) => {
         <iframe
           width="100%"
           height="200"
-          src="https://www.youtube.com/embed/_8p6YkEPVco"
-          title="Alice In Borderland Season 3 | Official Trailer | Netflix"
+          src="https://www.youtube.com/embed/yd-ZRsjyyRU"
+          title="गुरमीत चौधरी से ख़ास बातचीत | बिहार से बॉलीवुड तक का सफर | @gurmeetchoudhary9347"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
-          allowFullScreen
+          allowfullscreen
         ></iframe>
       </div>
 
       {/* Right Column - Register Form */}
       <div className="w-full flex flex-col justify-center">
         <h2 className="text-xl md:text-2xl font-bold text-[#b27f49] mb-4">
-          Register Your {sectionTitles[index][0]} 
+          Register Your {sectionTitles[index][0]}
         </h2>
         <form onSubmit={onsubmit} className="flex flex-col gap-4">
           {/* Name */}
@@ -144,10 +154,11 @@ const FormComponent = ({ index }) => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your name"
-                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${errors.name
-                  ? "border-red-300 focus:border-red-500"
-                  : "border-slate-200 focus:border-orange-500"
-                  }`}
+                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${
+                  errors.name
+                    ? "border-red-300 focus:border-red-500"
+                    : "border-slate-200 focus:border-orange-500"
+                }`}
               />
             </div>
             {errors.name && (
@@ -175,10 +186,11 @@ const FormComponent = ({ index }) => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your email"
-                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${errors.email
-                  ? "border-red-300 focus:border-red-500"
-                  : "border-slate-200 focus:border-orange-500"
-                  }`}
+                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${
+                  errors.email
+                    ? "border-red-300 focus:border-red-500"
+                    : "border-slate-200 focus:border-orange-500"
+                }`}
               />
             </div>
             {errors.email && (
@@ -207,10 +219,11 @@ const FormComponent = ({ index }) => {
                 type="tel"
                 required
                 placeholder="Enter your phone number"
-                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${errors.phone
-                  ? "border-red-300 focus:border-red-500"
-                  : "border-slate-200 focus:border-orange-500"
-                  }`}
+                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${
+                  errors.phone
+                    ? "border-red-300 focus:border-red-500"
+                    : "border-slate-200 focus:border-orange-500"
+                }`}
               />
             </div>
             {errors.phone && (
@@ -238,10 +251,11 @@ const FormComponent = ({ index }) => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your company name"
-                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${errors.company
-                  ? "border-red-300 focus:border-red-500"
-                  : "border-slate-200 focus:border-orange-500"
-                  }`}
+                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${
+                  errors.company
+                    ? "border-red-300 focus:border-red-500"
+                    : "border-slate-200 focus:border-orange-500"
+                }`}
               />
             </div>
             {errors.company && (
@@ -270,10 +284,11 @@ const FormComponent = ({ index }) => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your designation"
-                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${errors.designation
-                  ? "border-red-300 focus:border-red-500"
-                  : "border-slate-200 focus:border-orange-500"
-                  }`}
+                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${
+                  errors.designation
+                    ? "border-red-300 focus:border-red-500"
+                    : "border-slate-200 focus:border-orange-500"
+                }`}
               />
             </div>
             {errors.designation && (
@@ -302,10 +317,11 @@ const FormComponent = ({ index }) => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your country"
-                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${errors.country
-                  ? "border-red-300 focus:border-red-500"
-                  : "border-slate-200 focus:border-orange-500"
-                  }`}
+                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${
+                  errors.country
+                    ? "border-red-300 focus:border-red-500"
+                    : "border-slate-200 focus:border-orange-500"
+                }`}
               />
             </div>
             {errors.country && (
@@ -334,10 +350,11 @@ const FormComponent = ({ index }) => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your city"
-                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${errors.city
-                  ? "border-red-300 focus:border-red-500"
-                  : "border-slate-200 focus:border-orange-500"
-                  }`}
+                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${
+                  errors.city
+                    ? "border-red-300 focus:border-red-500"
+                    : "border-slate-200 focus:border-orange-500"
+                }`}
               />
             </div>
             {errors.city && (
@@ -366,10 +383,11 @@ const FormComponent = ({ index }) => {
                 onChange={handleChange}
                 required
                 placeholder="Enter your purpose"
-                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${errors.purpose
-                  ? "border-red-300 focus:border-red-500"
-                  : "border-slate-200 focus:border-orange-500"
-                  }`}
+                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl ${
+                  errors.purpose
+                    ? "border-red-300 focus:border-red-500"
+                    : "border-slate-200 focus:border-orange-500"
+                }`}
               />
             </div>
             {errors.purpose && (
@@ -397,10 +415,11 @@ const FormComponent = ({ index }) => {
                 onChange={handleChange}
                 rows={4}
                 placeholder="Enter any additional information"
-                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl resize-none ${errors.additionalInfo
-                  ? "border-red-300 focus:border-red-500"
-                  : "border-slate-200 focus:border-orange-500"
-                  }`}
+                className={`w-full pl-10 pr-3 py-3 border-2 rounded-xl resize-none ${
+                  errors.additionalInfo
+                    ? "border-red-300 focus:border-red-500"
+                    : "border-slate-200 focus:border-orange-500"
+                }`}
               />
             </div>
             {errors.additionalInfo && (
@@ -408,10 +427,12 @@ const FormComponent = ({ index }) => {
             )}
           </div>
 
-          <button type="submit"
+          <button
+            type="submit"
             disabled={isLoading}
-            className="bg-[#b27f49] text-white py-2 px-4 rounded-xl">
-            {isLoading ? "Submitting...":"Submit"}
+            className="bg-[#b27f49] text-white py-2 px-4 rounded-xl"
+          >
+            {isLoading ? "Submitting..." : "Submit"}
           </button>
         </form>
       </div>
