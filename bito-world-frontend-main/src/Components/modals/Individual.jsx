@@ -39,7 +39,7 @@ const Individual = ({ formData, handleChange, finalSubmit, ...props }) => {
                     name: formData.name,
                     email: formData.email,
                     phone: formData.phone,
-                    organization: formData.compnayName || 'Individual',
+                    organization: formData.companyName || 'Individual',
                     membershipType: activeTab === 'individual' ? 'individual' : 'corporate',
                     message: `Country: ${formData.country}, State: ${formData.state}, City: ${formData.cityPincode}, Gender: ${formData.gender}, Qualification: ${formData.qualification}, Industry: ${formData.industry}`
                 })
@@ -65,18 +65,43 @@ const Individual = ({ formData, handleChange, finalSubmit, ...props }) => {
             return (
                 <Form className="modalForm d-flex flex-column justify-content-center">
                     <Form.Group>
-                        <Form.Control type="text" placeholder="City with Pincode" value={formData.cityPincode} onChange={handleChange} name='cityPincode' />
+                        <Form.Label htmlFor="cityPincode">City / Pincode</Form.Label>
+                        <Form.Control 
+                            id="cityPincode"
+                            type="text" 
+                            placeholder="City / Pincode" 
+                            value={formData.cityPincode} 
+                            onChange={handleChange} 
+                            name='cityPincode' 
+                        />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Select aria-label="Select Gender" value={formData.gender} onChange={handleChange} name='gender'>
-                            <option>Select Gender</option>
+                        <Form.Label htmlFor="gender">Gender</Form.Label>
+                        <Form.Select 
+                            id="gender"
+                            aria-label="Select Gender" 
+                            value={formData.gender} 
+                            onChange={handleChange} 
+                            name='gender'
+                        >
+                            <option value="" disabled>
+                                -- Select Gender --
+                            </option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>
                         </Form.Select>
                     </Form.Group>
                     <Form.Group>
-                        <Form.Control type="text" placeholder="Qualification" value={formData.qualification} onChange={handleChange} name='qualification' />
+                        <Form.Label htmlFor="qualification">Qualification</Form.Label>
+                        <Form.Control 
+                            id="qualification"
+                            type="text" 
+                            placeholder="Qualification" 
+                            value={formData.qualification} 
+                            onChange={handleChange} 
+                            name='qualification' 
+                        />
                     </Form.Group>
                     <Button
                         style={{ width: '40%', margin: '0 auto' }}
@@ -93,19 +118,39 @@ const Individual = ({ formData, handleChange, finalSubmit, ...props }) => {
             return (
                 <Form className="modalForm d-flex flex-column justify-content-center">
                     <Form.Group>
-                        <Form.Control type="text" placeholder="Company Name" value={formData.compnayName} onChange={handleChange} name='compnayName' />
+                        <Form.Label htmlFor="companyName">Company Name</Form.Label>
+                        <Form.Control 
+                            id="companyName"
+                            type="text" 
+                            placeholder="Company Name" 
+                            value={formData.companyName} 
+                            onChange={handleChange} 
+                            name='companyName' 
+                        />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Control type="text" placeholder="Industry Type" value={formData.industry} onChange={handleChange} name='industry' />
+                        <Form.Label htmlFor="industry">Industry Type</Form.Label>
+                        <Form.Control 
+                            id="industry"
+                            type="text" 
+                            placeholder="Industry Type" 
+                            value={formData.industry} 
+                            onChange={handleChange} 
+                            name='industry' 
+                        />
                     </Form.Group>
                     <Form.Group>
+                        <Form.Label htmlFor="country">Country</Form.Label>
                         <Form.Select
+                            id="country"
                             aria-label="Select Country"
                             value={formData.country}
                             onChange={handleCountryChange}
                             name='country'
                         >
-                            <option value="">Select Country</option>
+                            <option value="" disabled>
+                                -- Select Country --
+                            </option>
                             {countries.map((country) => (
                                 <option key={country.isoCode} value={country.isoCode}>
                                     {country.name}
@@ -114,14 +159,18 @@ const Individual = ({ formData, handleChange, finalSubmit, ...props }) => {
                         </Form.Select>
                     </Form.Group>
                     <Form.Group>
+                        <Form.Label htmlFor="stateCorporate">State</Form.Label>
                         <Form.Select
+                            id="stateCorporate"
                             aria-label="Select State"
                             value={formData.stateCorporate}
                             onChange={handleChange}
                             name='stateCorporate'
                             disabled={!selectedCountry} // Disable until a country is selected
                         >
-                            <option value="">Select State</option>
+                            <option value="" disabled>
+                                -- Select State --
+                            </option>
                             {states.map((state) => (
                                 <option key={state.isoCode} value={state.isoCode}>
                                     {state.name}
@@ -130,7 +179,15 @@ const Individual = ({ formData, handleChange, finalSubmit, ...props }) => {
                         </Form.Select>
                     </Form.Group>
                     <Form.Group>
-                        <Form.Control type="text" placeholder="City" value={formData.corporateCity} onChange={handleChange} name='corporateCity' />
+                        <Form.Label htmlFor="corporateCity">City</Form.Label>
+                        <Form.Control 
+                            id="corporateCity"
+                            type="text" 
+                            placeholder="City" 
+                            value={formData.corporateCity} 
+                            onChange={handleChange} 
+                            name='corporateCity' 
+                        />
                     </Form.Group>
                     <Button
                         style={{ width: '40%', margin: '0 auto' }}
