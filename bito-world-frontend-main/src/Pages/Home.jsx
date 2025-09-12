@@ -316,7 +316,7 @@ const Home = (props) => {
   speed={1200}
   loop={true}
   autoplay={{
-    delay: 20000, // 20 seconds
+    delay: 1000, // 20 seconds
     disableOnInteraction: false,
   }}
   pagination={{
