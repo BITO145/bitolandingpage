@@ -180,7 +180,7 @@ const Home = (props) => {
               </p>
             </div>
             {/* 
-            <Link to={'https://bitoworld.in/old-site/about.php'}>
+            <Link to={'https://bitoworld.in/about.php'}>
               <div>
                 <Button className="section-2-btn px-4 py-2 mt-2">Learn More <i class='fa fa-arrow-right'></i></Button>
               </div>
