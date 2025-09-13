@@ -48,7 +48,7 @@ function Features() {
           </p>
 
           <button
-            onClick={() => navigate("/signin")}
+            onClick={() => navigate("/membership")}
             className="bg-[#b27f49] hover:bg-[#a3703f] px-8 py-4 rounded-2xl text-white xl:text-lg tracking-tight transition-all duration-200"
           >
             Become a Member
