@@ -58,7 +58,7 @@ console.log(props)
           <Form.Group>
             <Form.Control
               as="select"
-              name="country"
+              name="countryyy"
               value={props.formData.country}
               onChange={handleCountryChange}
               required

@@ -49,7 +49,9 @@ const Modal1 = ({
           <h2 className="name-div-head text-center">Enroll</h2>
 
           <Form.Group>
+            <Form.Label htmlFor="name">Full Name</Form.Label>
             <Form.Control
+              id="name"
               type="text"
               placeholder="Enter Full Name"
               name="name"
@@ -60,8 +62,10 @@ const Modal1 = ({
           </Form.Group>
 
           <Form.Group>
+            <Form.Label htmlFor="country">Country</Form.Label>
             <Form.Control
               as="select"
+              id="country"
               name="country"
               value={formData.country}
               onChange={handleCountryChange}
@@ -77,8 +81,10 @@ const Modal1 = ({
           </Form.Group>
 
           <Form.Group>
+            <Form.Label htmlFor="state">State</Form.Label>
             <Form.Control
               as="select"
+              id="state"
               name="state"
               value={formData.state}
               onChange={handleChange}
@@ -95,7 +101,9 @@ const Modal1 = ({
           </Form.Group>
 
           <Form.Group>
+            <Form.Label htmlFor="email">Email</Form.Label>
             <Form.Control
+              id="email"
               type="email"
               placeholder="example@gmail.com"
               name="email"
@@ -106,7 +114,9 @@ const Modal1 = ({
           </Form.Group>
 
           <Form.Group>
+            <Form.Label htmlFor="phone">Phone Number</Form.Label>
             <Form.Control
+              id="phone"
               type="tel"
               placeholder="Enter Phone Number"
               name="phone"
@@ -119,7 +129,9 @@ const Modal1 = ({
           </Form.Group>
 
           <Form.Group>
+            <Form.Label htmlFor="occupation">Occupation</Form.Label>
             <Form.Control
+              id="occupation"
               type="text"
               placeholder="Enter Occupation"
               name="occupation"
