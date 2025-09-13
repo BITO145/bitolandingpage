@@ -79,6 +79,7 @@ app.use('/api/upload', uploadRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/appointment', appointmentRoutes);
 app.use('/api/membership', membershipRoutes);
+app.use('/api/forms', require('./routes/form'));
 
 // Health check
 app.get('/', (req, res) => {

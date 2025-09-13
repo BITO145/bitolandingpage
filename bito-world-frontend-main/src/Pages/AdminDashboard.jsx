@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
@@ -12,10 +11,8 @@ const AdminDashboard = () => {
   const [token, setToken] = useState(localStorage.getItem('adminToken'));
   const [lotus,setlotus]= useState([])
   const navigate = useNavigate();
-  const BACKEND_URL = import.meta.env.VITE_MEMBERSHIP_BACKEND_URL;
 
-
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://bitolandingpage-iyhj.vercel.app/api';
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     if (!token) {
@@ -52,12 +49,11 @@ const AdminDashboard = () => {
           'Content-Type': 'application/json'
         }
       });
-      const lotusResponse = await fetch(`${BACKEND_URL}/api/forms`, {
+      const lotusResponse = await fetch(`${API_BASE_URL}/forms`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
         },
-        credentials: "include"
       });
 
       if (appointmentsResponse.ok) {
@@ -125,7 +121,7 @@ const AdminDashboard = () => {
       } else if (type === 'membership') {
         endpoint = `${API_BASE_URL}/membership/admin/${id}`;
       } else if(type==='lotus'){
-        endpoint = `${BACKEND_URL}/api/forms/${id}`;
+        endpoint = `${API_BASE_URL}/forms/${id}`;
       }
 
       const response = await fetch(endpoint, {
