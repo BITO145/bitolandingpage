@@ -12,7 +12,7 @@ import {
 import React from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-const BACKEND_URL = import.meta.env.VITE_MEMBERSHIP_BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_API_BASE_URL;
 
 const FormComponent = ({ index }) => {
   const [formData, setFormData] = React.useState({
@@ -101,15 +101,6 @@ const FormComponent = ({ index }) => {
     }
     setFormData((prev) => ({ ...prev, [name]: processedValue }));
     setErrors((prev) => ({ ...prev, [name]: "" }));
-  };
-
-  // Map card index to video sources
-  const videoSources = {
-    0: "/videos/industrial.mp4",
-    1: "/videos/healthcare.mp4",
-    2: "/videos/startup.mp4",
-    3: "/videos/greenGrowth.mp4",
-    4: "/videos/technology.mp4",
   };
 
   return (
