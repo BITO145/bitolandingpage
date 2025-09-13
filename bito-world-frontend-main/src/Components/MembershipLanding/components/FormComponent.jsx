@@ -48,7 +48,7 @@ const FormComponent = ({ index }) => {
     };
     try {
       const response = await axios.post(
-        `${BACKEND_URL}/api/forms`,
+        `${BACKEND_URL}/forms`,
         submissionData
       );
       setMessage("Registration successful!");
