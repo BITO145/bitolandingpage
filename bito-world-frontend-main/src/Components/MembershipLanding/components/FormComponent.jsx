@@ -10,7 +10,6 @@ import {
   FileText,
 } from "lucide-react";
 import React from "react";
-import axios from "axios";
 import { toast } from "react-hot-toast";
 const BACKEND_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -47,10 +46,21 @@ const FormComponent = ({ index }) => {
       formType: sectionTitles[index][1],
     };
     try {
-      const response = await axios.post(
+      const response = await fetch(
         `${BACKEND_URL}/forms`,
-        submissionData
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(submissionData),
+        }
       );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Failed to submit form.");
+      }
       setMessage("Registration successful!");
       toast.success("Registration successful!");
       console.log("User registered:", response.data);
