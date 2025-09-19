@@ -12,7 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <App >
     <ToastContainer 
 				autoClose={2000}
 				pauseOnHover
