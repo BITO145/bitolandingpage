@@ -12,6 +12,8 @@ import Kamal2 from '../assets/member/kamfool.jpg'
 import Jeff from '../assets/Jheff.jpg'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import AdvisorBanner from "../assets/bito-advisor-banner.jpg";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import {
@@ -414,6 +416,43 @@ const Home = (props) => {
         </div>
       </div>
     </Col>
+  </SwiperSlide>
+
+  <SwiperSlide>
+  <Link to="/bito-advisors" style={{ textDecoration: "none" }}>
+  <Col className="d-flex p-0 m-0">
+    <div
+      className="premond"
+      style={{
+        width: "100%",
+        height: "100%",
+        padding: 0,
+        margin: 0,
+        border: "none",
+        borderRadius: "8%",
+        overflow: "hidden",
+        cursor: "pointer",  // show pointer on hover
+      }}
+    >
+      <img
+        src={AdvisorBanner}
+        alt="advisor-banner"
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          display: "block",
+          margin: 0,
+          padding: 0,
+        }}
+      />
+    </div>
+  </Col>
+</Link>
+
+
+
+ 
   </SwiperSlide>
 </Swiper>
 
