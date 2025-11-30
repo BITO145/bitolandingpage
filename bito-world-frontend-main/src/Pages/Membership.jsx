@@ -91,12 +91,14 @@ const Membership = () => {
       </h4>
       <h2 className="main-banner-heading-membership pt-3 m-0 text-white">
         <span>BITO</span> Membership</h2>
-            <button onClick={() => setModalShow(true)} className="px-4 py-2 btn btn-light mt-sm-5 border-button">
-              Enroll Now <i className="fa fa-arrow-right" aria-hidden="true"></i>
-            </button>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSrbn2ZJLUKlOGGs8KpGDIInwtj5MPcjfw1cBlFC4IKWNhZQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" className="px-4 py-2 btn btn-light mt-3 border-button" style={{textDecoration: 'none'}}>
-              Register for BITO Leadership 24 <i className="fa fa-arrow-right" aria-hidden="true"></i>
-            </a>
+            <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center mt-4 mt-sm-5">
+              <button onClick={() => setModalShow(true)} className="px-4 py-2 btn btn-light border-button">
+                Enroll Now <i className="fa fa-arrow-right" aria-hidden="true"></i>
+              </button>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSrbn2ZJLUKlOGGs8KpGDIInwtj5MPcjfw1cBlFC4IKWNhZQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" className="px-4 py-2 btn btn-light border-button" style={{textDecoration: 'none', display: 'inline-block'}}>
+                Register for BITO Leadership 24 <i className="fa fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
             <Modal1 show={modalShow}
                     onHide={() => setModalShow(false)}
                     setIndividualModal={setIndividualModal}
