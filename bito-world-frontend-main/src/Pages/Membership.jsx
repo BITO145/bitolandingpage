@@ -94,6 +94,9 @@ const Membership = () => {
             <button onClick={() => setModalShow(true)} className="px-4 py-2 btn btn-light mt-sm-5 border-button">
               Enroll Now <i className="fa fa-arrow-right" aria-hidden="true"></i>
             </button>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSrbn2ZJLUKlOGGs8KpGDIInwtj5MPcjfw1cBlFC4IKWNhZQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" className="px-4 py-2 btn btn-light mt-3 border-button" style={{textDecoration: 'none'}}>
+              Register for BITO Leadership 24 <i className="fa fa-arrow-right" aria-hidden="true"></i>
+            </a>
             <Modal1 show={modalShow}
                     onHide={() => setModalShow(false)}
                     setIndividualModal={setIndividualModal}
