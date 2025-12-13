@@ -129,7 +129,7 @@ const BitoAdvisors = (props) => {
                         critical domains.
                     </p>
                     <p>
-                        As a seasoned CEO and Board Chairman, Jeff is celebrated for his
+                        As a seasoned CEO and Board Founder, Jeff is celebrated for his
                         visionary leadership and strategic acumen. He is a passionate advocate
                         for Regional Australia, where he has been a relentless champion for
                         initiatives that drive social, economic, and cultural transformation.
@@ -243,7 +243,7 @@ const BitoAdvisors = (props) => {
                         {/* Left div for content */}
                         <div className="left-side-div col-lg-6">
                             <small className="new-heading">{item.name}</small>
-                            <p className="chairman">{item.position}</p>
+                            <p className="Founder">{item.position}</p>
                             <div className="section-para">
                                 <p>
                                     {item.shortMessage}

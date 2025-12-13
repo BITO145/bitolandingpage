@@ -68,7 +68,7 @@ This appointment booking system allows users to book appointments with BITO lead
 - **Data Validation**: Status tracking (Pending, Confirmed, Cancelled, Completed)
 
 ### Leaders Available for Booking
-1. Shri Chirag Paswan - Chairman
+1. Shri Chirag Paswan - Founder
 2. Pravin Kumar - President
 3. Amaresh Mishra - Secretary-General
 4. Shri Anil Kumar Pratham - IPS (Ex-DGP) Gujarat, Global Advisor

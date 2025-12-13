@@ -31,25 +31,12 @@ const Appointment = () => {
 
     // Available leaders for appointment booking
     const leaders = [
-        {
-            id: 1,
-            name: "Shri Chirag Paswan",
-            role: "Chairman",
-            image: Section3,
-            available: true
-        },
+        
         {
             id: 2,
             name: "Amaresh Mishra",
             role: "Secretary-General",
             image: Amresh,
-            available: true
-        },
-        {
-            id: 3,
-            name: "Pravin Kumar",
-            role: "President",
-            image: PravinKumar,
             available: true
         },
         {

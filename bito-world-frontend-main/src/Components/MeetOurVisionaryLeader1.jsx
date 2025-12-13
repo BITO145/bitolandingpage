@@ -16,7 +16,7 @@ import MeetOurLeaderHome from "./MeetOurLeaderHome";
 const firstLeader = [
   {
     name: "Shri Chirag Paswan",
-    role: "Chairman",
+    role: "Founder",
     image: Section3, 
     modalMessage: (
       <>
@@ -165,7 +165,7 @@ const leaders = [
           critical domains.
         </p>
         <p>
-          As a seasoned CEO and Board Chairman, Jeff is celebrated for his
+          As a seasoned CEO and Board Founder, Jeff is celebrated for his
           visionary leadership and strategic acumen. He is a passionate advocate
           for Regional Australia, where he has been a relentless champion for
           initiatives that drive social, economic, and cultural transformation.
@@ -240,7 +240,7 @@ const MeetOurVisionaryLeader = (props) => {
         {/* Left div for content */}
         <div className="left-side-div col-lg-6">
           <small className="new-heading">Shri Chirag Paswan</small>
-          <p className="chairman">Chairman</p>
+          <p className="Founder">Founder</p>
           <div className="section-para">
             <p>Dear All, </p>
             <p>

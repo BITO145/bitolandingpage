@@ -234,7 +234,7 @@ const Home = (props) => {
                 <Modal.Title id="contained-modal-title-vcenter">
                   <h2 className="section-2-head new-heading">Shri Chirag Paswan
                   </h2>
-                  <p className="chairman">Chairman</p>
+                  <p className="Founder">Founder</p>
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
@@ -282,7 +282,7 @@ const Home = (props) => {
             <Col className="left-side-div" lg={6}>
               <small className="new-heading">Shri Chirag Paswan
               </small>
-              <p className="chairman">Chairman</p>
+              <p className="Founder">Founder</p>
               <div className="section-para">
                 <p>
                   Dear All, <br />
@@ -583,7 +583,7 @@ const Home = (props) => {
                 Clr. Jeff Whitton FAICD, is an esteemed Australian businessman and entrepreneur with over three decades of industry leadership. With 20 years of dedicated service as a Local Government councillor, Jeff has been a driving force in public service and community development, leaving a lasting impact on the communities he serves. His exceptional career spans 40 years in Digital Technology, Cybersecurity, and Information Intelligence, making him a formidable expert in these critical domains.
                 <br />
                 <br />
-                As a seasoned CEO and Board Chairman, Jeff is celebrated for his visionary leadership and strategic acumen. He is a passionate advocate for Regional Australia, where he has been a relentless champion for initiatives that drive social, economic, and cultural transformation. Jeff's unwavering commitment to progress underscores his reputation as a trailblazer who is deeply invested in shaping the future of Australia's regional landscapes.
+                As a seasoned CEO and Board Founder, Jeff is celebrated for his visionary leadership and strategic acumen. He is a passionate advocate for Regional Australia, where he has been a relentless champion for initiatives that drive social, economic, and cultural transformation. Jeff's unwavering commitment to progress underscores his reputation as a trailblazer who is deeply invested in shaping the future of Australia's regional landscapes.
                 <br />
                 <br />
                 In his capacity as a Global Advisor, Jeff Whitton is set to lead and fortify the burgeoning partnership between Australia and India, with a special focus on the Bihar International Trade Organisation (BITO). At the core of BITO's mission is the powerful concept of Bihari Asmita, which champions the vibrant cultural identity and pride of Bihar. Jeff is poised to advance BITO's vision, propelling the revival and celebration of Bihar's rich traditions, arts, crafts, and heritage. He recognizes that this cultural renaissance is vital for cultivating a dynamic community of entrepreneurs and innovators who are rooted in their heritage while striving for global excellence.
