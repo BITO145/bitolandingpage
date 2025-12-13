@@ -691,7 +691,7 @@ const OurInitiativeTabs = () => {
               </p>
             </div>
             <div className="col-12 col-md-6 px-3 px-md-4">
-              <img src={organizationalStructure} alt="" width="100%" />
+              <img src={lachhuar} alt="" width="100%" />
             </div>
           </div>
           

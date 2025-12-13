@@ -51,8 +51,8 @@ const Header = () => {
           {/* Right Nav Links (Desktop Only) */}
           <Nav className="ms-auto d-none d-lg-flex align-items-center">
             <Nav.Link as={Link} to="/events" className="text-white">Events</Nav.Link>
-            <Nav.Link as={Link} to="/appointment" className="text-white">Book Appointment</Nav.Link>
-            {/* <Nav.Link href="#media" className="text-white">Media</Nav.Link> */}
+            {/* <Nav.Link as={Link} to="/appointment" className="text-white">Book Appointment</Nav.Link> */}
+            <Nav.Link href="#media" className="text-white">Media</Nav.Link>
             <Nav.Link href="https://www.bitojobs.com/" target="_blank" rel="noopener noreferrer" className="text-white">BITO Jobs</Nav.Link>
             <Nav.Link as={Link} to="/contact-us" className="text-white">Contact</Nav.Link>
             <Nav.Link as={Link} to="/membership" className="text-white">Membership</Nav.Link>
@@ -114,9 +114,9 @@ const Header = () => {
             <Nav.Link as={Link} to="/events" className="text-dark" onClick={handleClose}>
               Events
             </Nav.Link>
-            <Nav.Link as={Link} to="/appointment" className="text-dark" onClick={handleClose}>
+            {/* <Nav.Link as={Link} to="/appointment" className="text-dark" onClick={handleClose}>
               Book Appointment
-            </Nav.Link>
+            </Nav.Link> */}
             {/* <Nav.Link href="#media" className="text-dark" onClick={handleClose}>
               Media
             </Nav.Link> */}
