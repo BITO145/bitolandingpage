@@ -234,7 +234,7 @@ const Home = (props) => {
                 <Modal.Title id="contained-modal-title-vcenter">
                   <h2 className="section-2-head new-heading">Shri Chirag Paswan
                   </h2>
-                  <p className="Founder">Founder</p>
+                  <p className="Founder">Chief Patron</p>
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
@@ -282,7 +282,7 @@ const Home = (props) => {
             <Col className="left-side-div" lg={6}>
               <small className="new-heading">Shri Chirag Paswan
               </small>
-              <p className="Founder">Founder</p>
+              <p className="Founder">Chief Patron</p>
               <div className="section-para">
                 <p>
                   Dear All, <br />

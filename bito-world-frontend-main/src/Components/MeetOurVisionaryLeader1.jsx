@@ -16,7 +16,7 @@ import MeetOurLeaderHome from "./MeetOurLeaderHome";
 const firstLeader = [
   {
     name: "Shri Chirag Paswan",
-    role: "Founder",
+    role: "Chief Patron",
     image: Section3, 
     modalMessage: (
       <>
@@ -240,7 +240,7 @@ const MeetOurVisionaryLeader = (props) => {
         {/* Left div for content */}
         <div className="left-side-div col-lg-6">
           <small className="new-heading">Shri Chirag Paswan</small>
-          <p className="Founder">Founder</p>
+          <p className="Founder">Chief Patron</p>
           <div className="section-para">
             <p>Dear All, </p>
             <p>

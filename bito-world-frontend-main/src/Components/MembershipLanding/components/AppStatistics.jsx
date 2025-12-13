@@ -26,7 +26,7 @@ function AppStatistics() {
             Shri Chirag Paswan
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-[#b27f49] font-semibold mb-4 sm:mb-6">
-            Founder
+            Chief Patron
           </p>
           <p className="text-[#2C3E50] text-xs sm:text-sm md:text-base mb-4 sm:mb-6">
             Dear All,

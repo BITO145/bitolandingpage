@@ -85,7 +85,7 @@ const MeetOurVisionaryLeader = (props) => {
                   <h2 className="section-2-head new-heading">
                     {cmsData?.cms_name_title || "Default Title"}
                   </h2>
-                  <p className="Founder">
+                  <p className="Chief Patron">
                     {cmsData?.cms_subtitle || "Default Title"}
                   </p>
                 </Modal.Title>
@@ -103,7 +103,7 @@ const MeetOurVisionaryLeader = (props) => {
               <small className="new-heading">
                 {cmsData?.cms_name_title || "Default Title"}
               </small>
-              <p className="Founder">
+              <p className="Chief Patron">
                 {cmsData?.cms_subtitle || "Default Title"}
               </p>
               <div className="section-para">

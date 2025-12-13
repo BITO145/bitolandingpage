@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 const firstLeader = [
   {
     name: "Shri Chirag Paswan",
-    role: "Founder",
+    role: "Chief Patron",
     image: Section3,
     modalMessage: (
       <>

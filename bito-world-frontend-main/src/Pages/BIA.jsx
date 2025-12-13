@@ -335,7 +335,7 @@ const BIA = () => {
           <div className="col-12 col-md-6 order-2 order-md-1">
             <img src={biaAbout} alt="" width="100%" />
             <p className="mt-2 biaImgTxt">
-              BITO Founder Hon Chirag Paswan addressing diaspora at MCG
+              BITO Chief Patron Hon Chirag Paswan addressing diaspora at MCG
               Australia
             </p>
           </div>
