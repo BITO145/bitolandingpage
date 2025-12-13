@@ -8,27 +8,27 @@ import "swiper/css/pagination";
 const chapterData = [
   {
     title: "TOKYO",
-    image: "https://admin.mockup4clients.com/public/uploads/chapter/1751448586_desktop.jpeg",
+    image: "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "NEW YORK",
-    image: "https://admin.mockup4clients.com/public/uploads/chapter/1751448642_mobile.jpeg",
+    image: "https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "SINGAPORE",
-    image: "https://admin.mockup4clients.com/public/uploads/chapter/1751448469_desktop.jpg",
+    image: "https://images.unsplash.com/photo-1565372913264-c40f5db6ee3b?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "LONDON",
-    image: "https://admin.mockup4clients.com/public/uploads/chapter/1751448662_desktop.jpg",
+    image: "https://images.unsplash.com/photo-1508898578281-774ac4893c2d?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "DUBAI",
-    image: "https://admin.mockup4clients.com/public/uploads/chapter/1751448680_mobile.jpg",
+    image: "https://images.unsplash.com/photo-1585325701953-14e7f207d14f?auto=format&fit=crop&w=800&q=80",
   },
   {
     title: "SYDNEY",
-    image: "https://admin.mockup4clients.com/public/uploads/chapter/1751448574_desktop.jpeg",
+    image: "https://images.unsplash.com/photo-1508610048659-a06b669e6f31?auto=format&fit=crop&w=800&q=80",
   },
 ];
 

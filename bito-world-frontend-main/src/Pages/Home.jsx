@@ -315,10 +315,10 @@ const Home = (props) => {
     <Swiper
   spaceBetween={20}
   slidesPerView={2}
-  speed={1200}
+  speed={1000}
   loop={true}
   autoplay={{
-    delay: 1000, // 20 seconds
+    delay: 500, // 20 seconds
     disableOnInteraction: false,
   }}
   pagination={{
@@ -361,13 +361,13 @@ const Home = (props) => {
   </SwiperSlide>
 
   {/* Slide 2 */}
-  <SwiperSlide>
+  {/* <SwiperSlide>
     <Col>
       <div className="president-card-2 premond">
         <div className="upper-title">
           <Image className="img-2-president" src={PravinKumar} alt="pravin-kumar" />
           <div className="name-div">
-            <h2 className="name-div-head">Pravin Kumar</h2>
+            <h2 className="name-div-head">Pravin Kumarr</h2>
             <p className="name-div-subhead">President</p>
             <p className="chairmain-inner">
               Bihar International Trade Organization
@@ -387,7 +387,7 @@ const Home = (props) => {
         </div>
       </div>
     </Col>
-  </SwiperSlide>
+  </SwiperSlide> */}
 
   {/* Slide 3 */}
   <SwiperSlide>

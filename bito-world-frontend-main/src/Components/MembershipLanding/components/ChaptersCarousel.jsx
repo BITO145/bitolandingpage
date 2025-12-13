@@ -10,7 +10,8 @@ const chapters = [
     description:
       "Our flagship chapter working on industrial policy reform and sustainable manufacturing practices.",
     members: 450,
-    image: "/singapre.jpg",
+    image:
+      "https://images.unsplash.com/photo-1565372913264-c40f5db6ee3b?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ const chapters = [
     description:
       "Focused on connecting startups with established industries and promoting innovation.",
     members: 380,
-    image: "/sydney.webp",
+    image:
+      "https://images.unsplash.com/photo-1508610048659-a06b669e6f31?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 3,
@@ -28,7 +30,8 @@ const chapters = [
     description:
       "Specializing in technology integration and digital transformation for traditional industries.",
     members: 420,
-    image: "/tokyo.jpg",
+    image:
+      "https://images.unsplash.com/photo-1559181567-c3190ca9959b?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 4,
@@ -37,7 +40,8 @@ const chapters = [
     description:
       "Pioneering industry-academia partnerships and deep tech investments.",
     members: 395,
-    image: "/new-york.jpg",
+    image:
+      "https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 5,
@@ -46,7 +50,8 @@ const chapters = [
     description:
       "Bridging traditional markets with cutting-edge tech startups and reforms.",
     members: 360,
-    image: "/london-uk.jpg",
+    image:
+      "https://images.unsplash.com/photo-1508898578281-774ac4893c2d?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 6,
@@ -55,7 +60,8 @@ const chapters = [
     description:
       "Integrating sustainability with infrastructure and real estate innovation.",
     members: 410,
-    image: "/dubai.avif",
+    image:
+      "https://images.unsplash.com/photo-1585325701953-14e7f207d14f?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
