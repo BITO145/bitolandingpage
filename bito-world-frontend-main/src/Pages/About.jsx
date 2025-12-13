@@ -150,7 +150,6 @@ const About = () => {
 
       
 
-      <MeetOurVisionaryLeader />
 
       <section className="container pb-3 pb-md-5">
         {/* DESKTOP DESIGN LAYOUT */}
