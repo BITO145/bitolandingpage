@@ -14,8 +14,8 @@ import Professional from '../../assets/icon/Layer-50.png'
 import Trades from '../../assets/icon/Layer-52.png'
 import { Link } from 'react-router-dom'
 import BitoCard from '../bito/BitoCard';
-import Modal1 from '../../components/modals/modal1.jsx'
-import Individual from "../../components/modals/Individual.jsx";
+import Modal1 from '../../Components/modals/modal1.jsx'
+import Individual from "../../Components/modals/Individual.jsx";
 import { toast } from "react-toastify";
 import emailjs from "emailjs-com";
 

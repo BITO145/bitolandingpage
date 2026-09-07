@@ -33,8 +33,8 @@ import {
   biaVision,
 } from "../../assets/bia";
 import MembershipPlansSlider from "../../components/membership/MembershipPlansSlider.jsx";
-import BIACorporate from "../../components/modals/BIACorporate.jsx";
-import BIAModal from "../../components/modals/BIAModal.jsx";
+import BIACorporate from "../../Components/modals/BIACorporate.jsx";
+import BIAModal from "../../Components/modals/BIAModal.jsx";
 import OurChaptersSlider from "../../components/home/OurChaptersSlider.jsx";
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
