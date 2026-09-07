@@ -18,7 +18,7 @@ import Appointment from '../../pages/appointment/Appointment';
 import AdminLogin from '../../pages/admin/AdminLogin';
 import AdminDashboard from '../../pages/admin/AdminDashboard';
 import AdminCMS from '../../pages/admin/AdminCMS';
-import ThankYou from '../../components/modals/ThankYou';
+import ThankYou from '../../Components/modals/ThankYou';
 import Landing from '../../components/landing/Landing';
 import Footer from '../../components/layout/Footer';
 import BIAFooter from '../../components/layout/BIAFooter';
