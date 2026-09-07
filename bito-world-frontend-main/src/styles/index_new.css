@@ -1,0 +1,693 @@
+@layer bootstrap, theme, tailwind;
+
+@import "bootstrap/dist/css/bootstrap.min.css" layer(bootstrap);
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(tailwind);
+
+/* ===================================================================
+   GLOBAL ELEMENT RULES
+   =================================================================== */
+
+/* li::marker was a global rule in the original Challenges.css — kept minimal here
+   so list markers across the site keep the same color/size (originally applied site-wide). */
+li::marker {
+    color: #b27f4a;
+    padding: 27px;
+    font-size: 22px;
+}
+
+/* --- Font faces --- */
+@font-face {
+  font-family: "Bebas Neue Pro";
+  src: url('../assets/font/BebasNeueProBold.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Bebas Neue Pro Regular";
+  src: url('../assets/font/BebasNeueProRegular.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neulis Sans Medium";
+  src: url('../assets/font/fonnts.com-Neulis_Sans_Medium.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neulis Sans Regular";
+  src: url('../assets/font/fonnts.com-Neulis_Sans_Regular.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+   font-family: 'Neulis';
+   src: url('../assets/font/fonnts.com-Neulis_Sans_Regular.otf');
+   src: local('Neulis'), local('Neulis-Regular'),
+      url('../assets/font/fonnts.com-Neulis_Sans_Regular.otf') format('truetype'),
+      url('../assets/font/fonnts.com-Neulis_Sans_Bold.otf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+@font-face {
+   font-family: 'Bebas Neue';
+   src: url('../assets/font/Fontspring-DEMO-bebasneuepro-bold.otf');
+   src: local('Bebas'), local('Bebas-Regular'),
+      url('../assets/font/Fontspring-DEMO-bebasneuepro-bold.otf') format('truetype');
+   font-weight: bold;
+   font-style: bold;
+   font-display: swap;
+}
+@font-face {
+   font-family: 'Neulis-bold';
+   src: url('../assets/font/fonnts.com-Neulis_Sans_Bold.otf');
+   src: local('Neulis'), local('Neulis-Bold'),
+      url('../assets/font/fonnts.com-Neulis_Sans_Bold.otf') format('truetype');
+   font-weight: bold;
+   font-style: bold;
+   font-display: swap;
+}
+
+.global span {
+   font-family: 'Neulis-bold';
+}
+
+i.fa.fa-arrow-right {
+   font-size: 12px;
+   margin-left: 8px;
+}
+
+html,
+body {
+   max-width: 100%;
+   overflow-x: hidden;
+   font-family: 'Neulis';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: 'Bebas Neue';
+}
+
+::placeholder {
+   color: #d1d1d1;
+}
+
+::-ms-input-placeholder {
+   color: #d1d1d1;
+}
+
+/* Bootstrap Tabs nested selectors (originally #our-initiative in About.css).
+   These target the Bootstrap-generated <li> > <button> nav structure which cannot
+   be styled inline on the <Tabs> component, so minimal CSS is kept global. */
+#our-initiative li { flex-grow: 1; margin: 2px; }
+#our-initiative li button {
+  border: none; color: rgb(121,121,121); background-color: rgb(232,232,232);
+  border-radius: 0; padding: 40px; margin: 2px; font-size: 36px; width: 100%;
+}
+#our-initiative li button.active { color: white !important; background: #c58c4e; }
+@media (max-width: 767px) {
+  #our-initiative li button { font-size: 12px; padding: 12px; }
+}
+
+/* swiper-pagination repositioning (originally in About.css) */
+.swiper-pagination { position: relative; margin-top: 2rem !important; }
+
+/* ===================================================================
+   SWIPER CONTROLS (home hero slider)
+   =================================================================== */
+.swiper-button-next,
+.swiper-button-prev {
+   border: 1px solid white;
+   border-radius: 50%;
+   padding: 20px;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+   font-size: 10px;
+}
+
+.mainSwiper .swiper-button-prev,
+.mainSwiper .swiper-button-next {
+   position: absolute;
+   top: 80%;
+   margin: 20px;
+}
+
+.mainSwiper .swiper-button-prev {
+   left: 80%;
+}
+
+.mainSwiper .swiper-button-next {
+   right: 10%;
+}
+
+.swiper-pagination-bullet {
+   background-color: #007bff;
+   width: 10px;
+   height: 10px;
+   opacity: 0.7;
+   margin: 0 5px;
+}
+
+.swiper-pagination-bullet-active {
+   background-color: #0056b3;
+   opacity: 1;
+}
+
+.swiper-pagination {
+   display: flex !important;
+   justify-content: center;
+   align-items: center;
+   margin: 15px auto;
+}
+
+.swiper-pagination span {
+   border-radius: 50%;
+   width: 15px;
+   height: 15px;
+   cursor: pointer;
+   background-color: #b27f4a !important;
+}
+
+.swiper-horizontal {
+   position: relative;
+}
+
+/* ===================================================================
+   HOME / ABOUT SECTIONS
+   =================================================================== */
+.section-2-head {
+   color: #b27f49;
+   font-weight: 500;
+   font-size: 4rem;
+}
+
+.section-2-btn {
+   border-radius: 50px;
+   border: none;
+   background-color: #422a1d;
+   color: white;
+   font-size: 15px;
+   margin-top: 80px;
+   font-weight: 600;
+}
+
+.section-2-img {
+   max-width: 100%;
+   border-radius: 12px;
+}
+
+.left-side-div {
+   max-width: 40%;
+}
+
+.left-side-div span {
+   font-size: 22px;
+   line-height: 2rem;
+   margin-top: 20px;
+   color: #523b2f;
+   font-family: 'Bebas Neue';
+}
+
+.section-para {
+   margin-top: 35px;
+}
+
+.section-3-heading {
+   font-size: 4rem;
+   font-weight: 600;
+   color: #b27f4a;
+}
+
+.section-3-btn {
+   border-radius: 50px;
+   border: none;
+   background-color: #422a1d;
+   color: white;
+   font-size: 15px;
+   font-weight: 600;
+}
+
+.heading {
+   font-size: 4rem;
+   font-weight: 500;
+   color: #b27f4a;
+}
+
+.Founder {
+   font-size: 20px;
+   color: #523b2f;
+   font-weight: 600;
+}
+
+.chairmain-inner {
+   color: #422a1d;
+   margin-top: 13px;
+   font-weight: 600;
+}
+
+.chairmain-msg {
+   margin-top: 10px;
+   color: #422a1d;
+}
+
+/* Vision / Mission */
+.vision span {
+   font-size: 3rem;
+   font-weight: 600;
+   color: #422a1d;
+   font-family: 'Bebas Neue';
+}
+
+.mission span {
+   font-size: 3rem;
+   font-weight: 600;
+   color: #422a1d;
+   font-family: 'Bebas Neue';
+}
+
+.mission img {
+   width: 12%;
+}
+
+.vision img {
+   width: 12%;
+}
+
+.vision p {
+   font-size: 15px;
+   margin-top: 25px;
+   color: #422a1d;
+}
+
+.mission p {
+   font-size: 15px;
+   margin-top: 25px;
+   color: #422a1d;
+}
+
+.vision-btn {
+   border-radius: 50px;
+   border: none;
+   background-color: #fff;
+   color: #422a1d;
+   font-size: 15px;
+   font-weight: 600;
+   margin-top: 30px;
+}
+
+/* Membership block (home + membership page) */
+.membership h4 {
+   font-size: 4rem;
+   color: #ce9c69;
+   font-weight: 700;
+}
+
+.membership p {
+   color: #fff;
+}
+
+.membership-btn {
+   border-radius: 50px;
+   border: 1px solid white;
+   background-color: transparent;
+   color: white;
+   font-size: 15px;
+   font-weight: 600;
+}
+
+/* Modal form inputs */
+.modalForm input {
+   border: none;
+   border-bottom: 1px solid #d9d5d5;
+   color: #000000;
+   padding: 10px;
+   background: #d1d1d1;
+   margin-bottom: 5px;
+   border-radius: 12px;
+}
+/* ===================================================================
+   RESPONSIVE (<= 1000px) — sirf used classes rakhe gaye hain
+   =================================================================== */
+@media screen and (min-device-width: 200px) and (max-device-width: 1000px) {
+
+   .quick-Home {
+      border-right: 1px solid #dbc1a5;
+   }
+
+   .small-head {
+      font-size: 20px !important;
+   }
+
+   .membership-heading {
+      line-height: 3rem;
+      margin-bottom: 2rem;
+      font-size: 3rem;
+   }
+
+   .membership-cta {
+      text-align: center;
+   }
+
+   .order-sm {
+      order: 1 !important;
+   }
+
+   .p-sm-1 {
+      padding: 1rem !important;
+   }
+
+   .mt-sm-0 {
+      margin-top: 0px !important;
+   }
+
+   .p-mobile {
+      padding: 0px;
+   }
+
+   .first-head-box {
+      margin-top: 170px;
+   }
+
+   .first-head-box h6 {
+      font-size: 20px !important;
+      text-align: center;
+      line-height: 17px;
+   }
+
+   .member-button {
+      display: flex;
+      justify-content: center;
+      margin-top: -30px;
+      text-align: center;
+   }
+
+   .member-button button {
+      font-size: 12px !important;
+      padding: 5px 12px !important;
+   }
+
+   .section-2-row {
+      margin-top: -40px;
+   }
+
+   .section-2-row .together {
+      text-align: center;
+   }
+
+   .left-side-div {
+      max-width: 100%;
+      margin-top: 20px;
+      text-align: left;
+   }
+
+   .section-para {
+      margin-top: 15px;
+   }
+
+   .section-para p:nth-child(3) {
+      font-size: 20px;
+   }
+
+   .section-2-btn {
+      margin-top: 15px;
+   }
+
+   .bodies strong {
+      font-size: 14px;
+   }
+
+   .bodies {
+      row-gap: 2rem !important;
+   }
+
+   .industries {
+      border-top: 1px solid #dbc1a5;
+      width: 100%;
+
+      img {
+         margin: 15px 0px auto;
+      }
+   }
+
+   .Initiatives .custom-wrap {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 0rem !important;
+      row-gap: 0rem !important;
+
+      .d-flex:nth-child(1) {
+         border-right: 1px solid #dbc1a5;
+         height: 90%;
+         margin-bottom: 2rem;
+      }
+
+      .d-flex:nth-child(3) {
+         border-top: 1px solid #dbc1a5;
+         width: 100%;
+      }
+
+      .d-flex:nth-child(4) {
+         border-top: 1px solid #dbc1a5;
+         width: 100%;
+         border-left: 1px solid #dbc1a5;
+         height: 100%;
+      }
+   }
+
+   .custom-wrap div strong {
+      font-size: 14px;
+      padding: 0px 5px;
+   }
+
+   .startup {
+      position: relative;
+   }
+
+   .startup:after {
+      content: " ";
+      position: absolute;
+      border-right: 1px solid #dbc1a5;
+      right: -20px;
+      height: 100%;
+   }
+
+   .section-3-heading {
+      font-size: 3rem;
+      line-height: 3rem;
+   }
+
+   .domtrack {
+      text-align: center;
+      padding: 0px !important;
+   }
+
+   .domtrack img {
+      width: 47px;
+   }
+
+   .domtrack1 img {
+      width: 50px;
+   }
+
+   .read-center {
+      text-align: center;
+   }
+
+   .collaboration {
+      text-align: center;
+
+      img {
+         width: 50px;
+      }
+   }
+
+   .vision span {
+      font-size: 2rem;
+      line-height: 1rem;
+      margin-top: 20px;
+      font-family: 'Bebas Neue';
+   }
+
+   .mission span {
+      line-height: 1.5rem;
+      font-size: 2rem;
+      margin-top: 25px;
+      font-family: 'Bebas Neue';
+   }
+
+   .mission .d-flex {
+      justify-content: center;
+   }
+
+   .vision .d-flex {
+      justify-content: center;
+   }
+
+   .vision p {
+      text-align: center;
+      margin-top: 10px;
+   }
+
+   .mission p {
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 0px;
+   }
+
+   .membership h4 {
+      font-size: 3rem;
+      text-align: center;
+   }
+
+   .membership p {
+      text-align: center;
+   }
+
+   .membership div {
+      text-align: center;
+   }
+
+   .mission-vision-row {
+      display: flex;
+      flex-direction: column;
+   }
+
+   .mission-vision-row-col-1 {
+      width: 100%;
+   }
+
+   .mission-vision-row-col-2 {
+      width: 100%;
+   }
+
+   .objective-img {
+      width: 100%;
+      margin-top: 20px;
+      border-radius: 30px;
+   }
+
+   .premond {
+      height: 320px;
+   }
+
+   .partner-btn {
+      padding: 9px 9px;
+      border-radius: 10px;
+      background: transparent;
+      border-color: #b27f4a;
+      color: #b17e4a;
+      font-weight: 700;
+      font-size: 15px;
+   }
+
+   .global-presence-head {
+      font-size: 3rem;
+   }
+
+   .our-partner-head {
+      font-size: 3rem;
+   }
+
+   .section-2-container {
+      border-left: none;
+      border-right: none;
+   }
+
+   .swiper-button-next,
+   .swiper-button-prev {
+      display: none;
+   }
+
+   .upper-title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+   }
+
+   .name-div {
+      padding-right: 0px;
+      padding-top: 0px;
+   }
+
+   .chairmain-inner {
+      font-size: 12px;
+      width: 200px;
+   }
+
+   .name-div-subhead {
+      margin: 0px;
+      font-size: 16px;
+   }
+
+   .name-div-head {
+      font-size: 22px;
+      margin-bottom: 0px;
+   }
+
+   .img-2-president {
+      border-radius: 100px;
+      border: 1px solid #b27f4a;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+   }
+
+   .years-mb h1 {
+      text-align: center !important;
+      font-size: 3rem;
+   }
+
+   .middle-line {
+      display: none;
+   }
+
+   .molk {
+      margin-top: -60px;
+      position: relative;
+      z-index: -1;
+   }
+
+   .amreesh-div {
+      margin-top: 10px;
+   }
+
+   .social-icons {
+      justify-content: center;
+   }
+
+   .social-footer.mt-3 {
+      text-align: center;
+   }
+
+   .mopbile-news {
+      border-top: 1px solid #dbc1a5;
+   }
+
+   .btn-center {
+      text-align: center;
+   }
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+   .contactRow {
+      padding: 0;
+   }
+
+   .cardHeading {
+      font-size: 30px;
+   }
+
+   .cardParagraph {
+      font-size: 20px !important;
+   }
+}
+
