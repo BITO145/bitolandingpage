@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { useParams } from "react-router-dom";
-import Imagesgrid from '../../Components/Imagesgrid';
+import Imagesgrid from '../../components/home/Imagesgrid.jsx';
 
 const EventDetails = ({ events }) => {
     const { slug } = useParams();

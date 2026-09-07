@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import './Event.css'
 import { Link } from 'react-router-dom'
 import {
     aboutUs,
@@ -64,9 +63,9 @@ const Events = ({ events }) => {
                         {events.map((event) => (
                             <div key={event.id} className="col-md-4">
                                 <Link to={`/events/${event.slug}`} className="text-decoration-none">
-                                    <div className="card thumnails">
+                                    <div className="card bg-[#b17d49] p-[8px] mb-[15px] rounded-[10px]">
                                         <img className="img-fluid rounded" src={event.thumbnail} alt="event-img" />
-                                        <div className='thumText'>
+                                        <div className='text-white pt-[8px] text-[19px] font-semibold'>
                                             {event.title}
                                         </div>
                                     </div>
