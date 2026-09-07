@@ -1155,9 +1155,11 @@ h6 {
 }
 
 .content:hover {
-   /* Bring color back on hover */
+   background-color: #d0e0ff;
+   filter: unset;
+   flex: 3;
    box-shadow: 0.7rem 0.7rem 0.5rem rgba(0, 0, 0, 0.3);
-   transition: all 0.5s ease-in-out;
+   transition: all 0.8s ease-in-out;
    /* Smooth hover transition */
 }
 .content {
