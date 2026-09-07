@@ -1,5 +1,10 @@
 node_modules
+<<<<<<< HEAD
 .env
 .env.local
 .env.*.local
 dist
+=======
+node_modules
+>>>>>>> origin/main
+.vite/
