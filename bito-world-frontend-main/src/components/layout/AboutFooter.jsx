@@ -8,9 +8,9 @@ import Instagram from "../../assets/social/insta.png";
 import Linkedin from "../../assets/social/linkedin.png";
 import Twitter from "../../assets/social/twitter.png";
 import Youtube from "../../assets/social/youtube.png";
-import BIAModal from "../modals/BIAModal.jsx";
+import BIAModal from "../../Components/modals/BIAModal.jsx";
 import { useState } from "react";
-import BIACorporate from "../modals/BIACorporate.jsx";
+import BIACorporate from "../../Components/modals/BIACorporate.jsx";
 // import { biaQR } from "../../assets/bia";
 
 const SocialLinks = () => (

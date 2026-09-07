@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import RightArrow from "../../assets/icons/white-right-arrow.png";
-import Modal1 from "../modals/modal1.jsx";
-import Individual from "../modals/Individual.jsx";
+import Modal1 from "../../Components/modals/modal1.jsx";
+import Individual from "../../Components/modals/Individual.jsx";
 import { toast } from "react-toastify";
 import emailjs from "emailjs-com";
 
