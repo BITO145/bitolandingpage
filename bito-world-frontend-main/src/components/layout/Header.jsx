@@ -124,7 +124,8 @@ const Header = () => {
             <Nav.Link as={Link} to="/events" className="text-dark" onClick={handleClose}>
               Events
             </Nav.Link>
-           <Nav.Link as={Link} to="/bia" className={navLinkClass}>BIA</Nav.Link>
+
+           <Nav.Link as={Link} to="/bia"  className="text-dark" onClick={handleClose}>BIA    </Nav.Link>
             <Nav.Link as={Link} to="/contact-us" className="text-dark" onClick={handleClose}>
               Contact
             </Nav.Link>
