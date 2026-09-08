@@ -82,7 +82,7 @@ const Home = (props) => {
       >
 
 <SwiperSlide
-  className="h-100 py-[50px] bg-[url('../assets/banners/Banner02.jpg')] bg-cover bg-center bg-no-repeat min-[800px]:max-[1200px]:py-[16pc] min-[600px]:max-[1000px]:py-[800px]! max-[600px]:mt-26 max-[600px]:bg-[url('../assets/home-banner/slider2.jpg')]"
+  className="h-100 py-[50px] bg-[url('../assets/banners/Banner02.jpg')] bg-cover bg-center bg-no-repeat min-[800px]:max-[1200px]:py-[16pc] min-[600px]:max-[1000px]:py-[800px]! max-[600px]:mt-20 max-[600px]:bg-[url('../assets/home-banner/slider2.jpg')]"
 >
 <div className="container text-white" style={{ height: "100vh" }}>
        
